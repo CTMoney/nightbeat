@@ -1,7 +1,8 @@
-# NightBeat ( WIP:^) )
-This is a program designed to allow for the clothing equivalent of stocks call. It assists and automates the user in buying retail clothing that appreciates 
-heavily in value over the course of months, weeks, or even days. There are a number of issues with other programs like this 
-on the market - one of which being security vulnerabilities which could compromise user data
+# NightBeat
+This is a program designed to allow for the clothing equivalent of a stocks call. It assists and automates the user in buying retail clothing that appreciates heavily in value over the course of months, weeks, or even days.
+
+[![Build Status](https://dev.azure.com/money1062/NightBeat/_apis/build/status/CTMoney.nightbeat?branchName=master)](https://dev.azure.com/money1062/NightBeat/_build/latest?definitionId=10&branchName=master)
+
 
 # General Diagram
 ![Workflow](./Overview.png)
@@ -14,17 +15,20 @@ on the market - one of which being security vulnerabilities which could compromi
 4. Webhooks / pinging shop stocks
 5. Purchasing selected stock
 
-# Technologies 
-1. React
-2. Electron
-3. MySQL
-4. NodeJS
-
 # Concerns
 - Security
   - Sensitive data that requires heavy encryption as well as secure transfer
 - Model
   - Multiple ways of dealing with data some with fewer security concerns and some with better performance
+- Databases
+  - Database structuring will be a large hurdle
+  
+# Technologies 
+1. React
+2. Gatsby
+3. graphQL
+3. MySQL
+4. NodeJS
 
 # Getting Started
 TODO
