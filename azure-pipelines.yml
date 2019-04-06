@@ -16,9 +16,9 @@ steps:
   displayName: 'Install Node.js'
 
 
-- task: CopyFiles@2
-  inputs:
-    targetFolder: '$(Build.ArtifactStagingDirectory)'  
+# - task: CopyFiles@2
+#   inputs:
+#     targetFolder: '$(Build.ArtifactStagingDirectory)'  
     
 - script: |
     npm install
