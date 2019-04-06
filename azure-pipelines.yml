@@ -16,13 +16,12 @@ steps:
   displayName: 'Install Node.js'
 
 
-- task: CopyFiles@2
-  inputs:
-    targetFolder: '$(Build.ArtifactStagingDirectory)'  
-    
 - script: |
     npm install
     npm run build
   displayName: 'npm install and build'
-  
+
+- task: CopyFiles@2
+  inputs:
+    targetFolder: '$(Build.ArtifactStagingDirectory)'    
 - task: PublishBuildArtifacts@1
