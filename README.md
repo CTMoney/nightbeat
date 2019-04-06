@@ -1,5 +1,5 @@
 # NightBeat
-This is a program designed to allow for the clothing equivalent of a stocks call. It assists and automates the user in buying retail clothing that appreciates heavily in value over the course of months, weeks, or even days.
+This is a program designed to allow for the clothing equivalent of a stocks call. It helps the user automate buying retail clothing that appreciates heavily in value over the course of months, weeks, or even days.
 
 [![Build Status](https://dev.azure.com/money1062/NightBeat/_apis/build/status/CTMoney.nightbeat?branchName=master)](https://dev.azure.com/money1062/NightBeat/_build/latest?definitionId=10&branchName=master)
 
