@@ -1,14 +1,13 @@
 import React, { Component, Fragment } from 'react';
-import Navbar from "./components/Navbar";
-import Form from "./components/Task/Form";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Toolbar from "./components/Toolbar/Toolbar";
+import Container from "./components/Container";
 
 class App extends Component {
   render() {
     return (
       <Fragment>
-        <Navbar />
-        <Form />
+        <Toolbar />
+        <Container />
       </Fragment>
     );
   }
