@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
-import Navbar from "./components/Navbar";
+import Toolbar from "./components/Toolbar/Toolbar";
 import Container from "./components/Container";
 
 class App extends Component {
   render() {
     return (
       <Fragment>
-        <Navbar />
+        <Toolbar />
         <Container />
       </Fragment>
     );
