@@ -67,39 +67,39 @@ class Form extends Component {
                         </div>
 
                         <label htmlFor="proxySelect">Proxy Select</label>
-                        <div class="input-group mb-5">
-                            <select class="custom-select" id="proxySelect">
+                        <div className="input-group mb-5">
+                            <select className="custom-select" id="proxySelect">
                                 <option selected>Choose...</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-light" type="button">Add Proxy</button>
+                            <div className="input-group-append">
+                                <button className="btn btn-outline-light" type="button">Add Proxy</button>
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="shopPassword">Shop Password:</label>
-                            <input type="password" class="form-control" id="shopPassword" placeholder="Password" />
+                            <input type="password" className="form-control" id="shopPassword" placeholder="Password" />
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="shopDelay">Shop Delay:</label>
-                            <input type="number" class="form-control" id="shopDelay" placeholder="1000ms = 1s" />
+                            <input type="number" className="form-control" id="shopDelay" placeholder="1000ms = 1s" />
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="monitorDelay">Monitoring Delay:</label>
-                            <input type="number" class="form-control" id="monitorDelay" placeholder="1000ms = 1s" />
+                            <input type="number" className="form-control" id="monitorDelay" placeholder="1000ms = 1s" />
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="purchaseDelay">Purchase Delay:</label>
-                            <input type="number" class="form-control" id="purchaseDelay" placeholder="1000ms = 1s" />
+                            <input type="number" className="form-control" id="purchaseDelay" placeholder="1000ms = 1s" />
                         </div>
 
-                            <button type="submit" class="btn btn-outline-light float-right">Create Task</button>
+                            <button type="submit" className="btn btn-outline-light float-right">Create Task</button>
                     </form>
                 </div>
                 </div>
@@ -107,4 +107,4 @@ class Form extends Component {
             }
         }
         
-        export default Form;
+export default Form;
