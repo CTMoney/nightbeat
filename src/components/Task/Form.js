@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 
 
 class Form extends Component {
+
     state = {
         sizes: [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15, 16, 17, 18, 19]
     }
 
     render() {
         return (
-            <div className="container">
-                <label className="display-4 mt-3">NightBeat</label>
-                <div className="jumbotron text-white bg-dark shadow">
                     <form className="form-group mb-4">
                         <div className="form-group">
                             <label htmlFor="shop">Shop:</label>
@@ -80,29 +78,27 @@ class Form extends Component {
                         </div>
 
                         <div className="form-group">
-                            <label for="shopPassword">Shop Password:</label>
+                            <label htmlFor="shopPassword">Shop Password:</label>
                             <input type="password" className="form-control" id="shopPassword" placeholder="Password" />
                         </div>
 
                         <div className="form-group">
-                            <label for="shopDelay">Shop Delay:</label>
+                            <label htmlFor="shopDelay">Shop Delay:</label>
                             <input type="number" className="form-control" id="shopDelay" placeholder="1000ms = 1s" />
                         </div>
 
                         <div className="form-group">
-                            <label for="monitorDelay">Monitoring Delay:</label>
+                            <label htmlFor="monitorDelay">Monitoring Delay:</label>
                             <input type="number" className="form-control" id="monitorDelay" placeholder="1000ms = 1s" />
                         </div>
 
                         <div className="form-group">
-                            <label for="purchaseDelay">Purchase Delay:</label>
+                            <label htmlFor="purchaseDelay">Purchase Delay:</label>
                             <input type="number" className="form-control" id="purchaseDelay" placeholder="1000ms = 1s" />
                         </div>
 
                             <button type="submit" className="btn btn-outline-light float-right">Create Task</button>
                     </form>
-                </div>
-                </div>
                 );
             }
         }
