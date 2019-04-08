@@ -1,21 +1,7 @@
 body {
-<<<<<<< HEAD
-    background-image: url('./images/synth.jpg');
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-html {
-    height: 100%;
-=======
     position: relative;
     background-image: url('./images/synth_waifu2x.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-header.toolbar {
-    position: absolute;
->>>>>>> 6e9b84bcc93614aa0174bef801f83a81e74b47a3
-}

@@ -13,8 +13,12 @@ const toolbar = props => (
             <div className="spacer"  />
             <div className="toolbar_navigation-items">
                 <ul>
-                    <li><a href="/">Products</a></li>
-                    <li><a href="/">Users</a></li>
+                    <li><a href="/">Dashboard</a></li>
+                    <li><a href="/create">Create task</a></li>
+                    <li><a href="/overview">Task view</a></li>
+                    <li><a href="/profiles">Billing Profiles</a></li>
+                    <li><a href="/proxy">Proxies</a></li>
+                    <li><a href="/settings"><i className="fas fa-cog"></i></a></li>
                 </ul>
             </div>
         </nav>

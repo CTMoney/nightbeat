@@ -3,13 +3,9 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import Task from "./Task/Task"
 import Proxy from "./Proxy/Proxy"
+import Profiles from "./Profiles/Profiles"
 
 const Container = () => {
-<<<<<<< HEAD
-    return ( 
-        <h1>CONTAINER h1</h1>
-     );
-=======
     return (
         <div className="container">
             <label htmlFor="bigJumbo" className="display-4 mt-5 text-white">NightBeat</label>
@@ -17,11 +13,11 @@ const Container = () => {
             <Router>
                 <Route exact path="/" component={Task} />
                 <Route path="/proxy" component={Proxy} />
+                <Route path="/profiles" component={Profiles} />
             </Router>
             </div>
         </div>
     )
->>>>>>> 6e9b84bcc93614aa0174bef801f83a81e74b47a3
 }
 
 export default Container;
