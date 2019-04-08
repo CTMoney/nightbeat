@@ -1,5 +1,5 @@
-import React from 'react';
-import './Toolbar.css'; 
+import React from 'react'
+import './Toolbar.css'
 import DrawerBtn from '../SideDrawer/DrawerToggleButton'
 
 
@@ -23,6 +23,6 @@ const toolbar = props => (
             </div>
         </nav>
     </header>
-);
+)
  
-export default toolbar;
+export default toolbar
