@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Profiles = () => {
     return ( 
@@ -6,8 +6,7 @@ const Profiles = () => {
         <label htmlFor="shop">Keywords:</label>
         <input type="text" className="form-control" name="keyword" id="keyword" placeholder="Separate, Values, By, Comma," />
     </div>
-
-     );
+     )
 }
  
-export default Profiles;
+export default Profiles

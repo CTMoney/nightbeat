@@ -1,10 +1,10 @@
-import React from 'react';
-import './DrawerToggleButton';
-import '../Toolbar/Toolbar.css';
+import React from 'react'
+import './DrawerToggleButton'
+import '../Toolbar/Toolbar.css'
 import './SideDrawer.css'
 
 const sideDrawer = props => {
-    let drawerClasses = 'side-drawer';
+    let drawerClasses = 'side-drawer'
     if (props.show) {
         drawerClasses = 'side-drawer open'
     }
@@ -19,7 +19,7 @@ const sideDrawer = props => {
             </li>
         </ul>
     </nav>
-    );
-};
+    )
+}
 
-export default sideDrawer;
+export default sideDrawer
