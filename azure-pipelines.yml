@@ -26,6 +26,3 @@ steps:
       rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
       includeRootFolder: false
       archiveFile: "$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip"
-
-  - task: PublicBuildArtifacts@1
-    displayName: "Publish artifacts: drop"
