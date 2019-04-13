@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import Toolbar from "./components/Toolbar/Toolbar"
 import Container from "./components/Container/Container"
 import SideDrawer from './components/SideDrawer/SideDrawer'
@@ -22,7 +22,7 @@ return {sideDrawerOpen: !prevState.sideDrawerOpen}
       backDrop = <Backdrop click={this.backdropClickHandler}/>
     }
     return (
-      <Fragment>
+      <>
         <div style={{height: '100$'}}>
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen}/>
@@ -33,7 +33,7 @@ return {sideDrawerOpen: !prevState.sideDrawerOpen}
         
 
         </div>
-      </Fragment>
+      </>
     )
   }
 }
