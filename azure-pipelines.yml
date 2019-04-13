@@ -14,12 +14,7 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-
-
-# - task: CopyFiles@2
-#   inputs:
-#     targetFolder: '$(Build.ArtifactStagingDirectory)'  
-    
+  
 - script: |
     npm install
     npm run build

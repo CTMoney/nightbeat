@@ -1,9 +1,11 @@
 import React from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
-import Task from "./Task/Task"
-import Proxy from "./Proxy/Proxy"
-import Profiles from "./Profiles/Profiles"
+import Dashboard from "./Dashboard"
+import Proxies from "./Proxy"
+import Profiles from "./Profiles"
+import CreateTask from "./CreateTask"
+import Settings from "./Settings"
 
 const Container = () => {
     return (
@@ -11,9 +13,11 @@ const Container = () => {
             <label htmlFor="bigJumbo" className="display-4 mt-5 text-white">NightBeat</label>
             <div name="bigJumbo" className="jumbotron text-white bg-dark shadow">
             <Router>
-                <Route exact path="/" component={Task} />
-                <Route path="/proxy" component={Proxy} />
+                <Route exact path="/" component={Dashboard} />
+                <Route path="/proxy" component={Proxies} />
                 <Route path="/profiles" component={Profiles} />
+                <Route path="/create" component={CreateTask} />
+                <Route path="/settings" component={Settings} />
             </Router>
             </div>
         </div>

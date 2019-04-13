@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Proxy = () => {
+const Proxies = () => {
     return (
-        <React.Fragment>
+        <>
             <p className="display-4 mt-0">Proxy</p>
             <div>
 
@@ -42,8 +42,8 @@ const Proxy = () => {
                 </form>
 
             </div>
-        </React.Fragment>
+        </>
     )
 }
 
-export default Proxy
+export default Proxies
