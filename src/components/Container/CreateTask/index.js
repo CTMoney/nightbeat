@@ -98,11 +98,11 @@ class CreateTask extends React.Component {
     
                 <button type="submit" className="btn btn-outline-light float-right">Create Task</button>
             </form>
-        );
+        )
     }
 }
  
-export default CreateTask;
+export default CreateTask
 
 
 
