@@ -29,7 +29,7 @@ const Proxies = () => {
                             <th>1</th>
                             <td>usimportantd1.fogldn.com:11743</td>
                             <td>Name</td>
-                            <td>password1</td>
+                            <td>gunga :D</td>
                             <td>700ms</td>
                         </tr>
                     </tbody>
