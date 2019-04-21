@@ -110,3 +110,7 @@ span.price {
 .slider.round:before {
   border-radius: 50%;
 }
+
+#navStyle {
+  color: white;
+}
