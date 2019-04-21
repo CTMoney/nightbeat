@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Splash = () => {
-    return ( 
+    return (
         <>
-        
+
         </>
-     );
+    );
 }
- 
-export default Splash;
+
+export default Splash; 
