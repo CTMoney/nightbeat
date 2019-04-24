@@ -30,12 +30,38 @@ const Splash = () => {
                     <button>button</button>
                 </div>
 
+                <div align="center">
+                <div className='sites-we-support1'>
+                    <div className='row'>
+                        <div className='col-md-12'>
+                            Sites we Support
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div align="center">
+                <div className='sites-we-support2'>
+                    <div className='row'>
+                        <div className='col-md-12'>
+                            Sites we Support continued
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+>
+
+
+
+
+
 
             <div align="center">
                 <div className='supported-sites-wrapper'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h2>Supported Sites</h2>
+                            <h2>Business Contact</h2>
                         </div>
                     </div>
                 </div>

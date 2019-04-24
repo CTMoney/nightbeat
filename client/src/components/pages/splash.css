@@ -16,26 +16,46 @@ header {
 
 
 
-
-
-
-
-
-
 /*--------------------------*/
 .some-page-wrapper {
   margin: 15px;
   margin-top: 50px;
   background-color: white;
   width: 70%;
-  height: 500px;
+  height: 450px;
   align-content: center;
   text-align: center;
   position: relative;
 }
 
 button {
-  top: 100px;
+  margin-bottom: 60px;
+  top: 60px;
+  position: relative;
+}
+
+/*---------------container1 and container 2-------------------*/
+.sites-we-support1 {
+  
+  margin-top: 60px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 300px;
+  align-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.sites-we-support2 {
+  
+  margin-top: 60px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 300px;
+  align-content: center;
+  text-align: center;
   position: relative;
 }
 
@@ -54,6 +74,10 @@ button {
   position: relative;
   top: 50px;
 }
+
+/*---------------contact us------------*/
+
+
 
 /*--------------footer----------------*/
 
