@@ -27,7 +27,7 @@ const Splash = () => {
 
             <div align="center">
                 <div>
-                    <button>button</button>
+                    <button>Click to Purchase</button>
                 </div>
 
 
