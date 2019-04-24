@@ -6,6 +6,7 @@ import Proxies from "./Proxy"
 import Profiles from "./Profiles"
 import CreateTask from "./CreateTask"
 import Settings from "./Settings"
+import Splash from "../pages/splash"
 
 const Container = () => {
     return (
@@ -18,6 +19,7 @@ const Container = () => {
                 <Route path="/profiles" component={Profiles} />
                 <Route path="/create" component={CreateTask} />
                 <Route path="/settings" component={Settings} />
+                <Route path="/splash" component={Splash} />
             </Router>
             </div>
         </div>
