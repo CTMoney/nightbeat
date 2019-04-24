@@ -31,41 +31,47 @@ const Splash = () => {
                 </div>
 
                 <div align="center">
-                <div className='sites-we-support1'>
+                <div className='alpha-beta-success'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            Sites we Support
+                            alpha beta success
                         </div>
                     </div>
                 </div>
             </div>
 
             <div align="center">
-                <div className='sites-we-support2'>
+                <div className='product-preview'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            Sites we Support continued
+                            product preview
                         </div>
                     </div>
                 </div>
             </div>
-
->
-
-
-
-
 
 
             <div align="center">
-                <div className='supported-sites-wrapper'>
+                <div className='supported-sites'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h2>Business Contact</h2>
+                            <h2>Supported Sites</h2>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <div align="center">
+                <div className='contact-us'>
+                    <div className='row'>
+                        <div className='col-md-12'>
+                            <h3>Contact Us</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
                 <div className="footer-btm-bar">
                     <div className='row'>

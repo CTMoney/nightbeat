@@ -1,20 +1,13 @@
 body {
   background-color: black;
-  height: 3000px;
+  height: 2800px;
 }
-
-
-
-
 
 header {
   text-align: center;
   color: white;
   margin-top: 100px;
 }
-
-
-
 
 /*--------------------------*/
 .some-page-wrapper {
@@ -34,9 +27,8 @@ button {
   position: relative;
 }
 
-/*---------------container1 and container 2-------------------*/
-.sites-we-support1 {
-  
+/*---------------alpha beta success and product preview-------------------*/
+.alpha-beta-success {
   margin-top: 60px;
   background-color: black;
   color: white;
@@ -47,8 +39,7 @@ button {
   position: relative;
 }
 
-.sites-we-support2 {
-  
+.product-preview {
   margin-top: 60px;
   background-color: black;
   color: white;
@@ -59,24 +50,37 @@ button {
   position: relative;
 }
 
-/*---------------supportedsites------*/
-
-.supported-sites-wrapper {
+/*-----------sites-we-support------------*/
+.supported-sites {
   width: 100%;
   height: 700px;
   background-color: black;
   color: white;
   position: absolute;
-  bottom: 200px;
+  bottom: 400px;
 }
 
-.supported-sites-wrapper h2 {
+.supported-sites h2 {
   position: relative;
   top: 50px;
 }
 
 /*---------------contact us------------*/
+.contact-us {
+  background-color: rgb(63, 63, 63);
+  color: white;
+  width: 100%;
+  height: 200px;
+  align-content: center;
+  text-align: center;
+  position: absolute;
+  bottom: 100px;
+}
 
+.contact-us h3 {
+  position: relative;
+  top: 20px;
+}
 
 
 /*--------------footer----------------*/
