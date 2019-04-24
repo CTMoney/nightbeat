@@ -2,7 +2,7 @@
   "name": "nightbeat",
   "version": "1.0.0",
   "description": "This is a program designed to allow for the clothing equivalent of a stocks call. It helps the user automate buying retail clothing that appreciates heavily in value over the course of months, weeks, or even days.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
