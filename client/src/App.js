@@ -8,7 +8,10 @@ import Splash from './components/pages/splash'
 class App extends Component {
   render() {
     return (
-      <Splash />
+      <>
+      <Container />
+      <Navbar />
+      </>
     )
   }
 }

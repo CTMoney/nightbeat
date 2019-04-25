@@ -8,7 +8,8 @@ const Splash = () => {
             <nav id="navStyle" className="navbar navbar-expand-lg navbar-dark bg-dark.bg-transparent">
                 <Link className="navbar-brand" to="/">
                     Night Beat
-      </Link>
+                </Link>
+                <a href="https://twitter.com/nightbeat_io" class="fa fa-twitter" id="twitTop"/>
             </nav>
 
             <header>
@@ -28,6 +29,7 @@ const Splash = () => {
             <div align="center">
                 <div>
                     <button>Click to Purchase</button>
+                    <button type="button" className="btn btn-success">+New Fake</button>
                 </div>
 
                 <div align="center">
@@ -44,7 +46,7 @@ const Splash = () => {
                 <div className='product-preview'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            product preview
+                            product preview (Two React-Strap Cards, one with links one with image)
                         </div>
                     </div>
                 </div>
@@ -55,7 +57,7 @@ const Splash = () => {
                 <div className='supported-sites'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h2>Supported Sites</h2>
+                            <h2>Supported Sites (Two Sections, Shopify and more to come)</h2>
                         </div>
                     </div>
                 </div>
@@ -78,6 +80,7 @@ const Splash = () => {
                         <div className='col-md-12'>
                             <div className='black-column'>
                                 footer</div>
+                                <a href="https://twitter.com/nightbeat_io" class="fa fa-twitter"/>
                         </div>
                     </div>
                 </div>
@@ -87,3 +90,5 @@ const Splash = () => {
 }
 
 export default Splash;
+
+
