@@ -63,6 +63,7 @@ const Profiles = () => {
                 <button type="button" className="btn btn-success">+New Fake</button>
               </div>
             </div>
+            <input type="text" id="profileName" placeholder="Profile Name"/>
           </div>
         </div>
       </form>
