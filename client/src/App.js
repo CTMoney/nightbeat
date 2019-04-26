@@ -8,7 +8,10 @@ class App extends Component {
   render() {
     return (
       <>
-        <CreateAccount />
+      {/* <Container /> */}
+      {/* <Navbar /> */}
+      <Splash/>
+
       </>
     )
   }
