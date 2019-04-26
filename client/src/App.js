@@ -4,7 +4,6 @@ import Navbar from './components/navbar/Navbar'
 import CreateAccount from './components/pages/Create/Account'
 import Splash from './components/pages/splash'
 
-
 class App extends Component {
   render() {
     return (
@@ -12,6 +11,7 @@ class App extends Component {
       {/* <Container /> */}
       {/* <Navbar /> */}
       <Splash/>
+
       </>
     )
   }
