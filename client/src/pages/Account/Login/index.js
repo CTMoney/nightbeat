@@ -2,12 +2,11 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import API from '../../../util/API'
 
-class Register extends Component {
+class Login extends Component {
   state = {
-    email: '',
     username: '',
     password: '',
-    redirectTo: null
+    redirect: null
   }
 
   handleInput = event => {
@@ -24,10 +23,10 @@ class Register extends Component {
     })
   }
 
-  handleRegistration = (event) => {
+  handleLogin = (event) => {
     event.preventDefault()
-    const { email, username, password } = this.state
-    API.register(email, username, password, this.handleRedirect)
+    const { username, password } = this.state
+    API.login(username, password, this.handleRedirect)
   }
 
   render() {
@@ -35,18 +34,7 @@ class Register extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
       return (
-        <form onSubmit={this.handleRegistration}>
-          <div className='form-group'>
-            <label className='text-white' htmlFor='email'>Email address</label>
-            <input
-              type='email'
-              className='form-control'
-              name='email'
-              value={this.state.email}
-              onChange={this.handleInput}
-              placeholder='Enter email'
-            />
-          </div>
+        <form onSubmit={this.handleLogin}>
           <div className='form-group'>
             <label className='text-white' htmlFor='username'>
               Username
@@ -81,4 +69,4 @@ class Register extends Component {
   }
 }
 
-export default Register
+export default Login;
