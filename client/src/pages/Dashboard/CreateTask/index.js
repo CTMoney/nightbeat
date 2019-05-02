@@ -80,20 +80,15 @@ class CreateTask extends React.Component {
                     <label htmlFor="shopPassword">Shop Password:</label>
                     <input type="password" className="form-control" id="shopPassword" placeholder="Password" />
                 </div>
-    
-                <div className="form-group">
-                    <label htmlFor="shopDelay">Shop Delay:</label>
-                    <input type="number" className="form-control" id="shopDelay" placeholder="1000ms = 1s" />
-                </div>
-    
+   
                 <div className="form-group">
                     <label htmlFor="monitorDelay">Monitoring Delay:</label>
                     <input type="number" className="form-control" id="monitorDelay" placeholder="1000ms = 1s" />
                 </div>
     
                 <div className="form-group">
-                    <label htmlFor="purchaseDelay">Purchase Delay:</label>
-                    <input type="number" className="form-control" id="purchaseDelay" placeholder="1000ms = 1s" />
+                    <label htmlFor="retryDelay">Retry Delay:</label>
+                    <input type="number" className="form-control" id="retryDelay" placeholder="1000ms = 1s" />
                 </div>
     
                 <button type="submit" className="btn btn-outline-light float-right">Create Task</button>
