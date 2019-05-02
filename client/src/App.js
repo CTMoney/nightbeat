@@ -7,10 +7,7 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <Dashboard /> */}
-        {/* <Register /> */}
-        <Splash />
-
+        <Dashboard />
       </>
     )
   }

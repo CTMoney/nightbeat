@@ -1,6 +1,8 @@
+const bcrypt = require('bcryptjs')
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
-    "user_email": {
+    user_email: {
       type: DataTypes.STRING,
       validate: {
         isEmail: true,
@@ -11,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         msg: 'This email is already in use.'
       }
     },
-    "user_name": {
+    username: {
       type: DataTypes.STRING,
       validate: {
         //For explanation of regexp see: https://regex101.com/r/f5Jnp5/2
@@ -23,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         msg: 'This username is already taken.'
       }
     },
-    "user_pass": {
+    password: {
       type: DataTypes.STRING,
       validate: {
         is: {
@@ -35,5 +37,23 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   })
+
+  User.prototype.checkPassword = function (inputPassword) {
+    return bcrypt.compareSync(inputPassword, this.password)
+  }
+  User.prototype.hashPassword = function (plainTextPassword) {
+    return bcrypt.hashSync(plainTextPassword, 10)
+  }
+
+  User.afterValidate(user => {
+    console.time('Validation & Hashing Completed: ')
+    if (!user.password) {
+      throw new Error('password is null or undefined')
+    } else {
+      user.password = user.hashPassword(user.password)
+    }
+    console.timeEnd('Validation & Hashing Completed: ')
+  })
+
   return User
 }
