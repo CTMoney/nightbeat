@@ -25,10 +25,13 @@ This is a program designed to allow for the clothing equivalent of a stocks call
   
 # Technologies 
 1. React
-2. Gatsby
-3. graphQL
-3. MySQL
-4. NodeJS
+2. Axios
+3. Bcrypt
+4. mySQL
+5. Sequelize
+6. Express
+7. Express-session
+8. Passport
 
 # Getting Started
 TODO
