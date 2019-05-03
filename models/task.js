@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         },
         keywords: {
-            type: DataTypes.String
+            type: DataTypes.STRING
         },
         size: {
             type: DataTypes.INTEGER

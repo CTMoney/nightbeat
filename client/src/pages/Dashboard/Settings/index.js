@@ -1,7 +1,30 @@
 import React from 'react'
+import API from '../../../util/API'
 
-const Settings = () => {
-    return (
+class Settings extends React.Component {
+
+    state= {
+        monitor: '',
+        retry: '',
+        webhook: ''
+    }
+
+    handleInput = event => {
+        event.preventDefault()
+        const { name, value } = event.target
+        this.setState({
+          [name]: value
+        })
+      }
+
+      handleProfile = (event) => {
+        event.preventDefault()
+        const {monitor, webhook, retry} = this.state
+        API.task(monitor, webhook, retry)
+      }
+
+    render() {
+        return (
         <>
             <div className="container border p-5" style={{ borderTopLeftRadius: "20px" }}>
                 <img className="col-3" src="https://picsum.photos/200" />
@@ -39,7 +62,7 @@ const Settings = () => {
             <input class="form-control" type="text" placeholder="" name="webhook" value="" readonly></input>
             </div>
         </>
-    )
+    )}
 }
 
 
