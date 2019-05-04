@@ -9,6 +9,9 @@
     cursor: pointer;
     padding: 0;
     box-sizing: border-box;
+    position: absolute;
+    top: 15px;
+    left: 10px;
 }
 
 .toggle-button:focus {
@@ -19,4 +22,9 @@
     width: 30px;
     height: 2px;
     background: white;
+}
+
+.toolbar_logo a {
+    position: relative;
+    left: 20px;
 }
