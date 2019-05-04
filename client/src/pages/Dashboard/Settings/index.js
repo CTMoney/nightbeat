@@ -1,7 +1,30 @@
 import React from 'react'
+import API from '../../../util/API'
 
-const Settings = () => {
-    return (
+class Settings extends React.Component {
+
+    state= {
+        monitor: '',
+        retry: '',
+        webhook: ''
+    }
+
+    handleInput = event => {
+        event.preventDefault()
+        const { name, value } = event.target
+        this.setState({
+          [name]: value
+        })
+      }
+
+      handleSettings = (event) => {
+        event.preventDefault()
+        const {monitor, webhook, retry} = this.state
+        API.task(monitor, webhook, retry)
+      }
+
+    render() {
+        return (
         <>
             <div className="container border p-5" style={{ borderTopLeftRadius: "20px" }}>
                 <img className="col-3" src="https://picsum.photos/200" />
@@ -21,7 +44,7 @@ const Settings = () => {
             </div>
             <div className="container mt-5">
                 <h1 className="display-4 mb-4">Global Delay</h1>
-                <form>
+                <form onSubmit={this.handleSettings}>
                     <div className="form-group row">
                         <label htmlFor="monitor" className="col-sm-2 col-form-label">Monitor Delay:</label>
                         <div class="col-sm-10">
@@ -39,7 +62,7 @@ const Settings = () => {
             <input class="form-control" type="text" placeholder="" name="webhook" value="" readonly></input>
             </div>
         </>
-    )
+    )}
 }
 
 

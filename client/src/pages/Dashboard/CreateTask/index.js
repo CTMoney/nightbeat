@@ -1,14 +1,30 @@
 import React from 'react';
+import API from '../../../util/API'
 
 class CreateTask extends React.Component {
 
     state = {
-        sizes: [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15, 16, 17, 18, 19]
+        sizes: [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15, 16, 17, 18, 19],
+        keywords: ''
     }
-    
+
+    handleInput = event => {
+        event.preventDefault()
+        const { name, value } = event.target
+        this.setState({
+          [name]: value
+        })
+      }
+
+      handleTask = (event) => {
+        event.preventDefault()
+        const { sizes, keywords } = this.state
+        API.task(sizes, keywords)
+      }
+
     render() {
         return (
-            <form className="form-group mb-4">
+            <form className="form-group mb-4" onSubmit={this.handleTask}>
                 <div className="form-group">
                     <label htmlFor="shop">Shop:</label>
                     <select className="form-control" name="shop" id="shop">
@@ -18,7 +34,7 @@ class CreateTask extends React.Component {
     
                 <div className="form-group">
                     <label htmlFor="shop">Keywords:</label>
-                    <input type="text" className="form-control" name="keyword" id="keyword" placeholder="Separate, Values, By, Comma," />
+                    <input type="text" className="form-control" name="keywords" onChange={this.handleInput} placeholder="Separate, Values, By, Comma," />
                 </div>
     
                 <div className="form-group">
