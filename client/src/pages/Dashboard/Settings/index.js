@@ -17,7 +17,7 @@ class Settings extends React.Component {
         })
       }
 
-      handleProfile = (event) => {
+      handleSettings = (event) => {
         event.preventDefault()
         const {monitor, webhook, retry} = this.state
         API.task(monitor, webhook, retry)
@@ -44,7 +44,7 @@ class Settings extends React.Component {
             </div>
             <div className="container mt-5">
                 <h1 className="display-4 mb-4">Global Delay</h1>
-                <form>
+                <form onSubmit={this.handleSettings}>
                     <div className="form-group row">
                         <label htmlFor="monitor" className="col-sm-2 col-form-label">Monitor Delay:</label>
                         <div class="col-sm-10">

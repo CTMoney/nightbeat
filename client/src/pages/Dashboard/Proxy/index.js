@@ -17,7 +17,7 @@ class Proxies extends React.Component {
         })
       }
 
-      handleProfile = (event) => {
+      handleProxy = (event) => {
         event.preventDefault()
         const { firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv } = this.state
         API.task(firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv)
@@ -28,7 +28,7 @@ class Proxies extends React.Component {
         <>
             <p className="display-4 mt-0">Proxy</p>
             <div>
-                <form className="form-inline">
+                <form className="form-inline" onSubmit={this.handleProxy}>
                     <input className="form-control mb-2 mr-sm-2" placeholder="Input Proxy" style={{ minWidth: "200px" }} type="text" name="proxy"/>
                     <input className="form-control mb-2 mr-sm-2" placeholder="Username" style={{ minWidth: "200px" }} type="text" name="username"/>
                     <input className="form-control mb-2 mr-sm-2" placeholder="Password" style={{ minWidth: "200px" }} type="password" name="password"/>
@@ -57,7 +57,7 @@ class Proxies extends React.Component {
                         </tr>
                     </tbody>
                 </table>
-                <form className="form-inline">
+                <form className="form-inline" onSubmit={this.handleProxy}>
                     <input className="form-control mb-2 mr-sm-2" type="text" style={{ minWidth: "400px" }} placeholder="Delete those with response time slow than.."></input>
                     <button className="btn btn-primary mb-2 mr-sm-2">submit</button>
                     <button className="btn btn-danger mb-2 mr-sm-2">Test Proxies</button>
