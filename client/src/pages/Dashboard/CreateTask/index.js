@@ -24,7 +24,7 @@ class CreateTask extends React.Component {
 
     render() {
         return (
-            <form className="form-group mb-4">
+            <form className="form-group mb-4" onSubmit={this.handleTask}>
                 <div className="form-group">
                     <label htmlFor="shop">Shop:</label>
                     <select className="form-control" name="shop" id="shop">

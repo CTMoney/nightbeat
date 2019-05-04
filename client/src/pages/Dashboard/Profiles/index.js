@@ -37,7 +37,7 @@ class Profiles extends React.Component {
         <div className="row">
   <div className="col-75">
     <div className="container">
-      <form action="/action_page.php">
+      <form action="/action_page.php" onSubmit={this.handleProfile}>
 
         <div className="row">
           <div className="col-50">
