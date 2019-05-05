@@ -42,9 +42,6 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         state: {
-<<<<<<< HEAD
-            type: DataTypes.STRING
-=======
             type: DataTypes.STRING,
             validate: {
                 notEmpty: {
@@ -52,8 +49,6 @@ module.exports = (sequelize, DataTypes) => {
                     msg: 'no city provided'
                 }
             }
-
->>>>>>> c471dd36d92313315b2159e2841a41f33301aeab
         },
         zip: {
             type: DataTypes.INTEGER,
