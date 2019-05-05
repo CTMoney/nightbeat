@@ -19,9 +19,6 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         keywords: {
-<<<<<<< HEAD
-            type: DataTypes.STRING
-=======
 
             type: DataTypes.STRING,
             validate: {
@@ -30,7 +27,6 @@ module.exports = (sequelize, DataTypes) => {
                     msg: 'No keywords provided'
                 }
             }
->>>>>>> c471dd36d92313315b2159e2841a41f33301aeab
         },
         size: {
             type: DataTypes.INTEGER,
