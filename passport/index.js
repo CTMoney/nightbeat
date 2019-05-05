@@ -11,11 +11,7 @@ passport.serializeUser((user, done) => {
 // user object attaches to the request as req.user
 passport.deserializeUser((id, done) => {
   console.log('DeserializeUser called')
-<<<<<<< HEAD
-  db.User.findOne({ where: { id: id }, attributes: ["username"] }).then((user, err) => {
-=======
   db.User.findOne({ where: { id: id }, attributes: ['username'] }).then((user, err) => {
->>>>>>> c471dd36d92313315b2159e2841a41f33301aeab
     console.log(user)
     console.log('*** Deserialize user')
     done(null, user)
