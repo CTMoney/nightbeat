@@ -56,6 +56,15 @@ module.exports = (sequelize, DataTypes) => {
         retry_delay: {
             type: DataTypes.INTEGER,
             defaultValue: 1500
+        },
+        profileName: {
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: {
+                    args: true,
+                    msg: 'No profile name provided'
+                }
+            }
         }
     })
     return Task

@@ -72,6 +72,19 @@ module.exports = (sequelize, DataTypes) => {
                 }
             }
         },
+        card_name: {
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: {
+                    args: true,
+                    msg: 'no card name provided'
+                },
+                contains: {
+                    args: /\s/g,
+                    msg: 'please provide the full name'
+                }
+            }
+        },
         cvv: {
             type: DataTypes.INTEGER,
             validate: {
