@@ -4,8 +4,8 @@ import API from '../../../util/API'
 class Settings extends React.Component {
 
     state= {
-        monitor: '',
-        retry: '',
+        monitor_delay: '',
+        retry_delay: '',
         webhook: ''
     }
 
@@ -19,8 +19,8 @@ class Settings extends React.Component {
 
       handleSettings = (event) => {
         event.preventDefault()
-        const {monitor, webhook, retry} = this.state
-        API.task(monitor, webhook, retry)
+        const {monitor_delay, retry_delay} = this.state
+        API.settings(monitor_delay, retry_delay)
       }
 
     render() {
@@ -48,12 +48,12 @@ class Settings extends React.Component {
                     <div className="form-group row">
                         <label htmlFor="monitor" className="col-sm-2 col-form-label">Monitor Delay:</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="monitor" name="monitor" placeholder="" />
+                            <input type="number" class="form-control" id="monitor" name="monitor_delay" value={this.state.monitor_delay} placeholder="" />
                         </div>
                         <label htmlFor="retry" className="col-sm-2 col-form-label">Retry Delay:</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="retry" name="retry" placeholder="" />
-                        </div>
+                            <input type="number" class="form-control" id="retry" name="retry_delay" value={this.state.retry_delay} placeholder="" />
+                        </div>  
                     </div>
                 </form>
             </div>

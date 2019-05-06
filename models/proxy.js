@@ -8,12 +8,6 @@ module.exports = (sequelize, DataTypes) => {
                     msg: 'no proxy provided'
                 }
             }
-        },
-        username: {
-            type: DataTypes.STRING
-        },
-        password: {
-            type: DataTypes.STRING
         }
     })
     return Proxy

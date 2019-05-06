@@ -22,6 +22,33 @@ export default {
                 handleRedirect('/')
             })
             .catch(err => console.log(`Error with logging in: \n ${err}`))
+    },
+
+    proxy(proxy, user) {
+        return axios.post('/proxy/submit', { proxy }) 
+         .then(res => {
+             if (res.status === 200) {
+                 console.log("Proxy Added")
+             }
+         })
+    },
+
+    profile(fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName) {
+        return axios.post('/billing/submit', {fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName})
+         .then(res => {
+             if (res.status === 200) {
+                 console.log("Billing Added")
+             }
+         })
+    },
+
+    settings(monitor_delay, retry_delay) {
+        return axios.put('settings/update', {monitor_delay, retry_delay})
+        .then(res => {
+            if (res.status === 200) {
+                console.log('Settings updated')
+            }
+        })
     }
 
 }

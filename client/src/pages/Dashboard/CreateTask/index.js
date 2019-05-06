@@ -46,7 +46,7 @@ class CreateTask extends React.Component {
     
                 <div className="form-group">
                     <label htmlFor="amount">Amount:</label>
-                    <input type="number" className="form-control" name="amount" id="amount" placeholder="No more than 50, greeder doge." />
+                        <input type="number" className="form-control" name="amount" id="amount" placeholder="No more than 50, greeder doge." />
                 </div>
     
                 <div className="form-group">

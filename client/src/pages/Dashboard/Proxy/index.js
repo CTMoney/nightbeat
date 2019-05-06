@@ -6,9 +6,7 @@ import ProxyTable from '../../../components/ProxyTable'
 class Proxies extends React.Component {
 
     state = {
-        proxy: '',
-        username: '',
-        password: '',
+        proxy: [],
     }
 
     handleInput = event => {
@@ -22,8 +20,12 @@ class Proxies extends React.Component {
 
       handleProxy = (event) => {
         event.preventDefault()
-        const { firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv } = this.state
-        API.task(firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv)
+        const { proxy } = this.state
+        console.time("proxy creation")
+        proxy.forEach((url) => {
+            API.proxy(url) 
+        })
+        console.timeEnd("proxy creation")
       }
 
     render() {

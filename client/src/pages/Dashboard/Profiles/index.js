@@ -4,7 +4,7 @@ import API from '../../../util/API'
 class Profiles extends React.Component {
 
   state = {
-    firstname: '', 
+    fullName: '', 
     email: '',
     address: '',
     city: '',
@@ -14,7 +14,8 @@ class Profiles extends React.Component {
     cardnumber: '',
     expmonth: '',
     expyear: '',
-    cvv: ''
+    cvv: '',
+    profileName: ''
   }
 
    handleInput = event => {
@@ -27,8 +28,8 @@ class Profiles extends React.Component {
 
       handleProfile = (event) => {
         event.preventDefault()
-        const { firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv } = this.state
-        API.task(firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv)
+        const { fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName } = this.state
+        API.profile(fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName)
       }
 
   render() {
@@ -37,13 +38,13 @@ class Profiles extends React.Component {
         <div className="row">
   <div className="col-75">
     <div className="container">
-      <form action="/action_page.php" onSubmit={this.handleProfile}>
+      <form onSubmit={this.handleProfile}>
 
         <div className="row">
           <div className="col-50">
             <h3>Billing Address</h3>
             <label for="fname"><i className="fa fa-user"></i> Full Name</label>
-            <input type="text" name="firstname" placeholder="John M. Doe"/>
+            <input type="text" name="fullName" placeholder="John M. Doe"/>
             <label for="email"><i className="fa fa-envelope"></i> Email</label>
             <input type="text" name="email" placeholder="john@example.com"/>
             <label for="adr"><i className="fa fa-address-card-o"></i> Address</label>
@@ -94,11 +95,11 @@ class Profiles extends React.Component {
                 <button type="button" className="btn btn-success">+New Fake</button>
               </div>
             </div>
-            <input type="text" placeholder="Profile Name"/>
+            <input type="text" name="profileName" placeholder="Profile Name"/>
           </div>
         </div>
       </form>
-      <button type="button" class="btn btn-success">Save Profile!</button>
+      <button type="submit" class="btn btn-success">Save Profile!</button>
     </div>
   </div>
 </div>
