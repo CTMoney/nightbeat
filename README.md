@@ -7,14 +7,6 @@ This is a program designed to allow for the clothing equivalent of a stocks call
 # General Diagram
 ![Workflow](./Overview.png)
 
-
-## *_**The above shows the order in which we will work through the program**_*
-1. User End
-2. Databases
-3. Main
-4. Webhooks / pinging shop stocks
-5. Purchasing selected stock
-
 # Concerns
 - Security
   - Sensitive data that requires encryption as well as secure storage
