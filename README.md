@@ -17,10 +17,8 @@ This is a program designed to allow for the clothing equivalent of a stocks call
 
 # Concerns
 - Security
-  - Sensitive data that requires heavy encryption as well as secure transfer
-- Model
-  - Multiple ways of dealing with data some with fewer security concerns and some with better performance
-- Databases
+  - Sensitive data that requires encryption as well as secure storage
+- Database
   - Database structuring will be a large hurdle
   
 # Technologies 
@@ -37,6 +35,3 @@ This is a program designed to allow for the clothing equivalent of a stocks call
 TODO
 # Build and Test
 TODO
- 
-### Just for me
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme).
