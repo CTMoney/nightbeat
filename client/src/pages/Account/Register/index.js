@@ -28,6 +28,8 @@ class Register extends Component {
     event.preventDefault()
     const { email, username, password } = this.state
     API.register(email, username, password, this.handleRedirect)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
   }
 
   render() {
