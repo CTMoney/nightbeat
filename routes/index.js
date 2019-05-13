@@ -8,6 +8,11 @@ module.exports = app => {
     req.session.username = username
     db.User.create({ username, user_email: email, password })
       .then((dbUser) => { res.json(dbUser) })
+      .then(
+        db.Settings.create({
+
+        })
+      )
       .catch(err => console.log(err))
     db.Settings.create({})
       .then(dbSettings => res.json(dbSettings))
@@ -17,7 +22,7 @@ module.exports = app => {
   app.post('/user/login', (req, res, next) => { next() },
     passport.authenticate('local'),
     (req, res) => {
-      console.log('logged in', req.user)
+      console.log('logged in', req.user.username)
       const userInfo = {
         username: req.user.username
       }

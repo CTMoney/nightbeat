@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { userInfo } from 'os';
 
 export default {
 
@@ -9,17 +10,15 @@ export default {
             })
     },
 
-    login(username, password, handleRedirect, props) {
+    login(username, password, handleRedirect) {
         return axios.post('/user/login', { username, password })
-            .then(res => {
-                console.log(`login response: ${res}`)
-                if (res.status === 200) {
-                    props.updateUser({
-                        loggedIn: true,
-                        username: Response.data.username
-                    })
+            .then(response => {
+                console.log(`login response: ${response}`)
+                if (response.status === 200) {
+                    console.log(`response: ${response.status}`)
+                } else {
+                    throw new Error(response.status)
                 }
-                handleRedirect('/')
             })
             .catch(err => console.log(`Error with logging in: \n ${err}`))
     },

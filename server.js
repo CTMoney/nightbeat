@@ -44,7 +44,7 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
 
-require("./routes/create-account-routes")(app)
+require("./routes")(app)
 
 db.sequelize.sync({ force: true })
   .then(() => app.listen(PORT, () => console.log(`🌎 ==> API server now on port ${PORT}!`)))
