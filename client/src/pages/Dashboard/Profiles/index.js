@@ -4,7 +4,7 @@ import API from '../../../util/API'
 class Profiles extends React.Component {
 
   state = {
-    firstname: '',
+    fullName: '',
     email: '',
     address: '',
     city: '',
@@ -14,7 +14,8 @@ class Profiles extends React.Component {
     cardnumber: '',
     expmonth: '',
     expyear: '',
-    cvv: ''
+    cvv: '',
+    profileName: ''
   }
 
   handleInput = event => {
@@ -27,8 +28,8 @@ class Profiles extends React.Component {
 
   handleProfile = (event) => {
     event.preventDefault()
-    const { firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv } = this.state
-    API.task(firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv)
+    const { fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName } = this.state
+    API.profile(fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName)
   }
 
   render() {
@@ -37,27 +38,27 @@ class Profiles extends React.Component {
       <div className="row">
         <div className="col-75">
           <div className="container">
-            <form action="/action_page.php" onSubmit={this.handleProfile}>
+            <form onSubmit={this.handleProfile}>
 
               <div className="row">
                 <div className="col-50">
                   <h3>Billing Address</h3>
-                  <label htmlFor="fname"><i className="fa fa-user"></i> Full Name</label>
-                  <input type="text" name="firstname" placeholder="John M. Doe" />
-                  <label htmlFor="email"><i className="fa fa-envelope"></i> Email</label>
+                  <label for="fname"><i className="fa fa-user"></i> Full Name</label>
+                  <input type="text" name="fullName" placeholder="John M. Doe" />
+                  <label for="email"><i className="fa fa-envelope"></i> Email</label>
                   <input type="text" name="email" placeholder="john@example.com" />
-                  <label htmlFor="adr"><i className="fa fa-address-card-o"></i> Address</label>
+                  <label for="adr"><i className="fa fa-address-card-o"></i> Address</label>
                   <input type="text" name="address" placeholder="542 W. 15th Street" />
-                  <label htmlFor="city"><i className="fa fa-institution"></i> City</label>
+                  <label for="city"><i className="fa fa-institution"></i> City</label>
                   <input type="text" name="city" placeholder="New York" />
 
                   <div className="row">
                     <div className="col-50">
-                      <label htmlFor="state">State</label>
+                      <label for="state">State</label>
                       <input type="text" name="state" placeholder="NY" />
                     </div>
                     <div className="col-50">
-                      <label htmlFor="zip">Zip</label>
+                      <label for="zip">Zip</label>
                       <input type="text" name="zip" placeholder="10001" />
                     </div>
                   </div>
@@ -65,23 +66,23 @@ class Profiles extends React.Component {
 
                 <div className="col-50">
                   <h3>Payment</h3>
-                  <label htmlFor="fname">Accepted Cards</label>
+                  <label for="fname">Accepted Cards</label>
                   <div className="icon-container">
                     <i className="fa fa-cc-visa" style={{ color: "navy" }}></i>
                     <i className="fa fa-cc-amex" style={{ color: "blue" }}></i>
                     <i className="fa fa-cc-mastercard" style={{ color: "red" }}></i>
                     <i className="fa fa-cc-discover" style={{ color: "orange" }}></i>
                   </div>
-                  <label htmlFor="cname">Name on Card</label>
+                  <label for="cname">Name on Card</label>
                   <input type="text" name="cardname" placeholder="John More Doe" />
-                  <label htmlFor="ccnum">Credit card number</label>
+                  <label for="ccnum">Credit card number</label>
                   <input type="text" name="cardnumber" placeholder="1111-2222-3333-4444" />
-                  <label htmlFor="expmonth">Exp Month</label>
+                  <label for="expmonth">Exp Month</label>
                   <input type="text" name="expmonth" placeholder="September" />
 
                   <div className="row">
                     <div className="col-50">
-                      <label htmlFor="expyear">Exp Year</label>
+                      <label for="expyear">Exp Year</label>
                       <input type="text" name="expyear" placeholder="2018" />
                       <label className="switch">
                         <input type="checkbox" />
@@ -89,16 +90,16 @@ class Profiles extends React.Component {
                       </label>
                     </div>
                     <div className="col-50">
-                      <label htmlFor="cvv">CVV</label>
+                      <label for="cvv">CVV</label>
                       <input type="text" name="cvv" placeholder="352" />
                       <button type="button" className="btn btn-success">+New Fake</button>
                     </div>
                   </div>
-                  <input type="text" placeholder="Profile Name" />
+                  <input type="text" name="profileName" placeholder="Profile Name" />
                 </div>
               </div>
             </form>
-            <button type="button" className="btn btn-success">Save Profile!</button>
+            <button type="submit" class="btn btn-success">Save Profile!</button>
           </div>
         </div>
       </div>

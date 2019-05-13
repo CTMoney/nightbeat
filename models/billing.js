@@ -49,7 +49,6 @@ module.exports = (sequelize, DataTypes) => {
                     msg: 'no city provided'
                 }
             }
-
         },
         zip: {
             type: DataTypes.INTEGER,
@@ -70,6 +69,19 @@ module.exports = (sequelize, DataTypes) => {
                 isCreditCard: {
                     args: true,
                     msg: 'not a valid credit card number'
+                }
+            }
+        },
+        card_name: {
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: {
+                    args: true,
+                    msg: 'no card name provided'
+                },
+                contains: {
+                    args: /\s/g,
+                    msg: 'please provide the full name'
                 }
             }
         },

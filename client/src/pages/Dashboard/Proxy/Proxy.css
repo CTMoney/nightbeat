@@ -1,0 +1,10 @@
+
+.proxy-container {
+    height: 1000px;
+}
+
+button.btn.btn-primary.mb-2.mr-sm-2 {
+    position: relative;
+    top: 30px;
+    width: 100px;
+}
