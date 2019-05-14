@@ -5,15 +5,21 @@ import Splash from './pages/Splash'
 import Register from './pages/Account/Register'
 import Login from './pages/Account/Login'
 import FourOhFour from './pages/404'
-import { AuthenticationProvider } from './context/authenticationContext';
+import { AuthenticationContext } from './context/authenticationContext';
+
 
 
 class App extends React.Component {
   state = {
-    authenticated: false,
-    userInfo: null
-  }
 
+  }
+  componentDidMount() {
+    let { authenticated, userInfo } = this.context[0]
+    this.setState({
+      authenticated,
+      userInfo
+    })
+  }
   AuthCheck = () => {
     if (this.state.authenticated && this.state.userInfo) {
       return (
@@ -37,11 +43,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <AuthenticationProvider>
-        {this.AuthCheck()}
-      </AuthenticationProvider>
+      this.AuthCheck()
     )
   }
 }
-
+App.contextType = AuthenticationContext
 export default App
