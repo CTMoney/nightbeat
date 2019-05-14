@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
     const Task = sequelize.define("Task", {
         shop: {
-          type: DataTypes.STRING, 
-          validate: {
-              notEmpty: {
-                  args: true,
-                  msg: 'No shop selected'
-              }
-          } 
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: {
+                    args: true,
+                    msg: 'No shop selected'
+                }
+            }
         },
         url: {
             type: DataTypes.STRING,
@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             validate: {
                 notEmpty: {
-                    args: true, 
+                    args: true,
                     msg: 'No billing profile selected'
                 }
             }
@@ -65,7 +65,8 @@ module.exports = (sequelize, DataTypes) => {
                     msg: 'No profile name provided'
                 }
             }
-        }
+        },
     })
+
     return Task
 }
