@@ -3,7 +3,7 @@ import React from 'react';
 export const DeauthenticationContext = React.createContext();
 
 export const DeauthenticationProvider = (props) => {
-  const [deauthenticatedUser, setDeauth] = React.useState('')
+  const [deauthenticatedUser, setDeauth] = React.useState()
 
   const logout = () => {
     setDeauth({

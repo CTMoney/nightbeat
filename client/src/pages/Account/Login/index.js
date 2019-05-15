@@ -3,38 +3,34 @@ import { Redirect } from 'react-router-dom'
 import API from '../../../util/API'
 import { AuthenticationContext } from '../../../context/authenticationContext'
 
-
-
 const Login = (props) => {
 
-  const [authenticatedUser, login] = React.useContext(AuthenticationContext)
-  const [username, setUser] = React.useState('')
-  const [password, setPassword] = React.useState('')
-  const [redirectTo, setRedirectTo] = React.useState(null)
-
-
+  let { authenticated, userInfo, login } = React.useContext(AuthenticationContext)
+  let [redirectTo, setRedirectTo] = React.useState()
+  let [loginForm, setLoginForm] = React.useState({
+   username: '',
+   password: ''
+ })
+const {username, password} = loginForm
 
   const handleInput = event => {
-    event.preventDefault()
-    const { name, value } = event.target
-    if (name == 'username') {
-      setUser(value)
-    } else if (name == 'password') {
-      setPassword(value)
-    }
-  }
+    setLoginForm({
+      ...loginForm, [event.target.name]: event.target.value
+    })
 
-  const handleRedirect = (page) => {
-    setRedirectTo(page)
   }
 
   const handleLogin = (event) => {
     event.preventDefault()
-    API.login(username, password, handleRedirect)
+    console.log('handling the login');
+
+    API.login(username, password)
       .then(userInfo => {
-        console.log('\n\n\n', userInfo, '\n\n\n')
-        console.log('\n\n\n', authenticatedUser, '\n\n\n')
+        console.log(userInfo);
         login(userInfo)
+        setRedirectTo('/')
+        sessionStorage.setItem('authenticatedUser', true)
+        sessionStorage.setItem('userInfo', userInfo)
       })
       .catch(err => console.log(err))
   }

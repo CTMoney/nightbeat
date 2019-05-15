@@ -10,24 +10,16 @@ import { AuthenticationContext } from './context/authenticationContext';
 
 
 class App extends React.Component {
-  state = {
 
-  }
-  componentDidMount() {
-    let { authenticated, userInfo } = this.context[0]
-    this.setState({
-      authenticated,
-      userInfo
-    })
-  }
   AuthCheck = () => {
-    if (this.state.authenticated && this.state.userInfo) {
+    let {authenticated, userInfo} = this.context
+    if (authenticated && userInfo) {
       return (
         <Dashboard />
       )
-    } else if (this.state.authenticated && !this.state.userInfo) {
+    } else if (authenticated && !userInfo) {
       return <FourOhFour />
-    } else if (!this.state.authenticated) {
+    } else if (!authenticated) {
       return (
         <Router>
           <Switch>
