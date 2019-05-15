@@ -59,7 +59,7 @@ module.exports = (router) => {
       .catch(err => console.log(err))
   })
 
-  router.get('/', (req, res, next) => {
+  router.get('/', passport.authenticate('local'), (req, res, next) => {
     console.log('===== user!!======')
     console.log(req.user)
     if (req.user) {
