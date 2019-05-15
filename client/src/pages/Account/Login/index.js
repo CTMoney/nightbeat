@@ -8,10 +8,10 @@ const Login = (props) => {
   let { authenticated, userInfo, login } = React.useContext(AuthenticationContext)
   let [redirectTo, setRedirectTo] = React.useState()
   let [loginForm, setLoginForm] = React.useState({
-   username: '',
-   password: ''
- })
-const {username, password} = loginForm
+    username: '',
+    password: ''
+  })
+  const { username, password } = loginForm
 
   const handleInput = event => {
     setLoginForm({
@@ -26,9 +26,8 @@ const {username, password} = loginForm
 
     API.login(username, password)
       .then(userInfo => {
-        console.log(userInfo);
-        login(userInfo)
         setRedirectTo('/')
+        login(userInfo)
         sessionStorage.setItem('authenticatedUser', true)
         sessionStorage.setItem('userInfo', userInfo)
       })
@@ -39,7 +38,7 @@ const {username, password} = loginForm
 
   return (
     redirectTo ?
-      <Redirect to={{ pathname: redirectTo }} />
+      <Redirect to={{ exactpathname: redirectTo }} />
       :
       <form onSubmit={handleLogin}>
         <div className='form-group'>

@@ -10,7 +10,7 @@ const toolbar = props => (
                 <DrawerBtn click={props.drawerClickHandler} />
             </div>
             <div className="toolbar_logo"><a href="/">THE LOGO</a></div>
-            <div className="spacer"  />
+            <div className="spacer" />
             <div className="toolbar_navigation-items">
                 <ul>
                     <li><a href="/">Dashboard</a></li>
@@ -23,5 +23,5 @@ const toolbar = props => (
         </nav>
     </header>
 )
- 
+
 export default toolbar
