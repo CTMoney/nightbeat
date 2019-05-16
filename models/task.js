@@ -85,6 +85,10 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    running: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   })
 
   return Task
