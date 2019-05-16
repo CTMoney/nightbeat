@@ -1,54 +1,43 @@
 import React from 'react'
 
-const Dashboard = () => {
-    return ( 
-    <>
-    <h1>Dashboard</h1> 
-    <div style={{border: "5px solid white" }}>
-        <table style={{width: "100%"}}>
-  <tr>
-    <th>ID</th>
-    {/*   ^Font awesome shopiy Favicon */}
-    <th>Keywords</th> 
-    <th>Profile</th>
-    <th>Retry</th>
-    <th>Monitor</th>
-    <th>Proxy</th>
-    <th>Status</th>
-    <th>Clock</th>
-    <th>Start</th>
-    <th>Stop</th>
-    <th>Delete</th>
-    <th>Edit</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Jordan,1</td> 
-    <td>Wells Fargo</td>
-    <td>800</td>
-    <td>800</td>
-    <td>usimportantd1.fogldn.com:13511</td>
-    <td>Running</td>
-    <td>Elapsed 14min</td>
-    <td>Btn</td>
-    <td>Btn</td>
-    <td>Btn</td>
-    <td>Btn</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td> 
-    <td></td>
-  </tr>
-</table>
-</div>
-    
-    <button type="button" className="btn btn-success btn-sm">Start All</button>
-    <button type="button" className="btn btn-danger btn-sm">Stop All</button>
-    <button type="button" className="btn btn-danger btn-sm">Delete All</button>
 
+const Dashboard = () => {
+  return (
+    <>
+      <h1 className="text-center">Dashboard</h1>
+      <div style={{ border: "2px inset gray" }}>
+        <table style={{ width: "100%" }}>
+          <tr style={{ borderBottom: '1px inset gray' }}>
+            <th className="text-center">ID</th>
+            {/*   ^Font awesome shopiy Favicon */}
+            <th className="text-center">Keywords</th>
+            <th className="text-center">Profile</th>
+            <th className="text-center">Retry</th>
+            <th className="text-center">Monitor</th>
+            <th className="text-center">Proxy</th>
+            <th className="text-center">Status</th>
+            <th className="text-center">Clock</th>
+            <th className="text-center"><i className="fas fa-play-circle" style={{ color: 'green' }}></i>Toggle</th>
+            <th className="text-center">Edit</th>
+            <th className="text-center"><i className="fas fa-times-circle" style={{ color: 'red' }}></i>Delete</th>
+          </tr>
+          <tr>
+            <td className="text-center">1</td>
+            <td className="text-center">Jordan,1</td>
+            <td className="text-center">Wells Fargo</td>
+            <td className="text-center">800</td>
+            <td className="text-center">800</td>
+            <td className="text-center">usimportantd1.fogldn.com:13511</td>
+            <td className="text-center">Running</td>
+            <td className="text-center">Elapsed 14min</td>
+            <td className="text-center"><i className="fas fa-play-circle" style={{ color: 'green' }}></i></td>
+            <td className="text-center"><i className="fas fa-edit"></i></td>
+            <td className="text-center"><i className="fas fa-times-circle" style={{ color: 'red' }}></i></td>
+          </tr>
+        </table>
+      </div>
     </>
-    )
+  )
 }
- 
+
 export default Dashboard
