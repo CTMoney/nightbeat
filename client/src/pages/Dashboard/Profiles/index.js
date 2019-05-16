@@ -19,7 +19,7 @@ const Profiles = (props) => {
     profileName: ''
   })
 
-  let { fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName } = billingForm
+  let { fullName, email, address, city, state, zip, cardName, cardNumber, expMonth, expYear, cvv, profileName } = billingForm
 
   const handleInput = event => {
     setBillingForm({
@@ -29,7 +29,7 @@ const Profiles = (props) => {
 
   const handleProfile = (event) => {
     event.preventDefault()
-    API.profile(fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName)
+    API.profile(fullName, email, address, city, state, zip, cardName, cardNumber, expMonth, expYear, cvv, profileName)
       .then(res => {
         console.log(res)
       })
@@ -42,7 +42,7 @@ const Profiles = (props) => {
         <div className="container">
           <form onSubmit={handleProfile}>
             <div className="row">
-              <div className="col-50">
+              <div className="col-50" id="left">
                 <h3>Billing Address</h3>
                 <label for="fname"><i className="fa fa-user"></i> Full Name</label>
                 <input type="text" name="fullName" placeholder="John M. Doe" value={fullName} onChange={handleInput} />
@@ -65,7 +65,7 @@ const Profiles = (props) => {
                 </div>
               </div>
 
-              <div className="col-50">
+              <div className="col-50" id="right">
                 <h3>Payment</h3>
                 <label for="fname">Accepted Cards</label>
                 <div className="icon-container">

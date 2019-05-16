@@ -2,6 +2,7 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import API from '../../../util/API'
 import { AuthenticationContext } from '../../../context/authenticationContext'
+import './Login.css'
 
 const Login = props => {
 
@@ -39,36 +40,45 @@ const Login = props => {
     redirectTo ?
       <Redirect to={{ exactpathname: redirectTo }} />
       :
-      <form onSubmit={handleLogin}>
-        <div className='form-group'>
-          <label className='text-white' htmlFor='username'>
-            Username
-          </label>
-          <input
-            type='text'
-            className='form-control'
-            name='username'
-            value={username}
-            onChange={handleInput}
-            placeholder='Enter username'
-          />
-        </div>
-        <div className='form-group'>
-          <label className='text-white' htmlFor='password'>Password</label>
-          <input
-            type='password'
-            className='form-control'
-            name='password'
-            value={password}
-            onChange={handleInput}
-            placeholder='Enter password'
-          />
-        </div>
+      <div className="container-login">
 
-        <button type='submit' className='btn btn-primary'>
-          Submit
+        <form onSubmit={handleLogin}>
+          <div className="user">
+            <div className='form-group'>
+              <label className='text-white' htmlFor='username'>
+                Username
+          </label>
+              <input
+                type='text'
+                className='form-control'
+                name='username'
+                value={username}
+                onChange={handleInput}
+                placeholder='Enter username'
+              />
+            </div>
+          </div>
+
+          <div className="pass">
+            <div className='form-group'>
+              <label className='text-white' htmlFor='password'>
+                Password</label>
+              <input
+                type='password'
+                className='form-control'
+                name='password'
+                value={password}
+                onChange={handleInput}
+                placeholder='Enter password'
+              />
+            </div>
+          </div>
+
+          <button type='submit' className='btn btn-primary'>
+            Submit
         </button>
-      </form>
+        </form>
+      </div>
   )
 }
 export default Login;

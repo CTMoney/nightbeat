@@ -9,3 +9,19 @@ margin-right: 30% !important;
 .jumbotron.text-white.bg-dark.shadow.container-reg {
     height: 200px !important;
 }
+
+
+.container-register {
+    background: radial-gradient(rgba(0, 139, 105, 0.9) , rgba(119, 47, 201, 0.9)) !important;
+    position: relative !important;
+    top: -30px !important;
+    height: 720px !important;
+    width: 40%;
+    padding: 40px;
+    margin: 80px;
+    }
+
+    .container-register p {
+        color: white;
+        font-size: 40px;
+    }
