@@ -1,6 +1,7 @@
 import React from 'react'
 import API from '../../../util/API'
-import ProxyTable from '../../../components/ProxyTable'
+import ProxyTable from './components/ProxyTable'
+import ProxyModal from './components/ProxyModal'
 
 
 class Proxies extends React.Component {
@@ -15,33 +16,30 @@ class Proxies extends React.Component {
         event.preventDefault()
         const { name, value } = event.target
         this.setState({
-          [name]: value
+            [name]: value
         })
-      }
+    }
 
-
-      handleProxy = (event) => {
+    handleProfile = (event) => {
         event.preventDefault()
         const { firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv } = this.state
         API.task(firstname, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv)
-      }
+    }
 
     render() {
         return (
-        <>
-            <p className="display-4 mt-0">Proxy</p>
-
-            <div>
-                <form className="form-inline" onSubmit={this.handleProxy}>
-
-                    <input className="form-control mb-2 mr-sm-2" placeholder="Input Proxy" style={{ minWidth: "200px" }} type="text" name="proxy"/>
-                    <button type="submit" className="btn btn-primary mb-2 mr-sm-2">submit</button>
-                </form> 
-            
-                <ProxyTable/>
-            </div>
-        </>
-    )}
+            <>
+                    <p className="display-4 mt-0">Proxy</p>
+                    <div className="proxy-container" id="prox-con">
+                        <form className="form-inline">
+                            <input className="form-control mb-2 mr-sm-2" placeholder="Input Proxy" style={{ minWidth: "300px" }} type="text" name="proxy" />
+                        </form>
+                        <ProxyTable />
+                        <ProxyModal />
+                    </div>
+            </>
+        )
+    }
 }
 
 export default Proxies

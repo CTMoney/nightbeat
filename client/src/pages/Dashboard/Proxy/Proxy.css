@@ -1,10 +1,15 @@
 
-.proxy-container {
-    height: 1000px;
+.da-btn {
+    position: relative !important;
+    bottom: -10px !important;
+    width: 50% !important;
+    background-color: rgb(42, 42, 66) !important;
 }
 
-button.btn.btn-primary.mb-2.mr-sm-2 {
-    position: relative;
-    top: 30px;
-    width: 100px;
+thead {
+    color: white !important;
+}
+
+tbody {
+    color: white;
 }
