@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
     <>
       <h1 className="text-center">Dashboard</h1>

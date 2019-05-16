@@ -1,6 +1,6 @@
 import React from 'react'
 import API from '../../../util/API'
-import ProxyTable from '../../../components/ProxyTable'
+import ProxyTable from './Table'
 
 
 const Proxies = props => {

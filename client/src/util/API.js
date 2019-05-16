@@ -14,8 +14,7 @@ export default {
   task(
     shop, url, size, keywords, amount,
     billingProfile, numberOfProxies, proxyInput,
-    shopPassword, monitorDelay, retryDelay, profileName
-  ) {
+    shopPassword, monitorDelay, retryDelay, profileName) {
     return axios.post('/task/submit', {
       shop, url, size, keywords, amount,
       billingProfile, numberOfProxies, proxyInput,

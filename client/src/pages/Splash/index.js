@@ -27,8 +27,7 @@ const Splash = () => {
 
             <div align="center">
                 <div>
-                    <button>Click to Purchase</button>
-                    <button type="button" className="btn btn-success">+New Fake</button>
+                    <a href="/register"><button>Click to Purchase</button></a>
                 </div>
 
                 <div align="center">
