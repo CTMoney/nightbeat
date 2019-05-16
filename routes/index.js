@@ -28,7 +28,6 @@ module.exports = (router) => {
     (req, res) => {
       console.log('logged in', req.user.username)
       const userInfo = {
-        email: req.user.email,
         username: req.user.username
       }
       res.json(userInfo)
