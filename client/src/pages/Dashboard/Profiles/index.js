@@ -18,7 +18,7 @@ const Profiles = (props) => {
     profileName: ''
   })
 
-  let { fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName } = billingForm
+  let { fullName, email, address, city, state, zip, cardName, cardNumber, expMonth, expYear, cvv, profileName } = billingForm
 
   const handleInput = event => {
     setBillingForm({

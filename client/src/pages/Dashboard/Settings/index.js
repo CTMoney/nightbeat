@@ -9,13 +9,13 @@ const Settings = props => {
 		webhook: ''
 	})
 	let { monitorDelay, retryDelay } = settings
-	handleInput = event => {
+	const handleInput = event => {
 		setSettings({
 			...settings, [event.target.name]: event.target.value
 		})
 	}
 
-	handleSettings = (event) => {
+	const handleSettings = (event) => {
 		event.preventDefault()
 		API.settings(monitorDelay, retryDelay)
 	}
