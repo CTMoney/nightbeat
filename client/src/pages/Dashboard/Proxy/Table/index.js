@@ -20,8 +20,8 @@ export default class ProxyTable extends React.Component {
           <tr>
             <th>1</th>
             <td>usimportantd1.fogldn.com:11743</td>
-            <td>Name</td>
-            <td>gunga :D</td>
+            <td>Chicago</td>
+            <td>ktRL45</td>
             <td>700ms</td>
           </tr>
         </tbody>

@@ -17,6 +17,7 @@ const CreateTask = props => {
     retryDelay: '',
     profileName: ''
   })
+
   let { shop, url, size, keywords, amount, billingProfile, numberOfProxies, proxyInput, shopPassword, monitorDelay, retryDelay, profileName } = taskForm
   const handleInput = (event) => {
     setTaskForm({
@@ -43,10 +44,10 @@ const CreateTask = props => {
       {/* profileName */}
       <div className="form-group">
         <label htmlFor="profileName">profile name:</label>
-        <input type="text" className="form-control" name="profileName" onChange={handleInput} />
+        <input type="text" className="form-control" name="profileName" value={profileName} onChange={handleInput} />
       </div>
 
-      {/* shop */}
+      {/* shop NEED FIX*/}
       <div className="form-group">
         <label htmlFor="shop">Shop:</label>
         <select className="form-control" name="shop">
@@ -59,16 +60,16 @@ const CreateTask = props => {
       {/* url */}
       <div className="form-group">
         <label htmlFor="url">custom url:</label>
-        <input type="text" className="form-control" name="url" onChange={handleInput} />
+        <input type="text" className="form-control" name="url" value={url} onChange={handleInput} />
       </div>
 
       {/* keywords */}
       <div className="form-group">
         <label htmlFor="shop">Keywords:</label>
-        <input type="text" className="form-control" name="keywords" onChange={handleInput} placeholder="Separate, Values, By, Comma," />
+        <input type="text" className="form-control" name="keywords" onChange={handleInput} value={keywords} placeholder="Separate, Values, By, Comma," />
       </div>
 
-      {/* size */}
+      {/* size NEED FIX*/}
       <div className="form-group">
         <label htmlFor="size">Size:</label>
         <select className="form-control" name="size" id="size">
@@ -79,10 +80,10 @@ const CreateTask = props => {
       {/* amount */}
       <div className="form-group">
         <label htmlFor="amount">Amount:</label>
-        <input type="number" className="form-control" name="amount" />
+        <input type="number" className="form-control" name="amount" value={amount} onChange={handleInput} />
       </div>
 
-      {/* billingProfiles */}
+      {/* billingProfiles NEED FIX*/}
       <div className="form-group">
         <label htmlFor="billingProfiles">Payment Profile:</label>
         <select className="form-control" name="billingProfiles">
@@ -93,31 +94,31 @@ const CreateTask = props => {
       {/* numberOfProxies */}
       <div className="form-group">
         <label htmlFor="numberOfProxies"># of Proxies:</label>
-        <input type="number" className="form-control" name="numberOfProxies" />
+        <input type="number" className="form-control" name="numberOfProxies" value={numberOfProxies} onChange={handleInput} />
       </div>
 
       {/* proxyInput */}
       <div className="form-group">
         <label htmlFor="proxyInput">Proxy Select</label>
-        <input type="text" className="form-control" name="proxyInput" />
+        <input type="text" className="form-control" name="proxyInput" value={proxyInput} onChange={handleInput} />
       </div>
 
       {/* shopPassword */}
       <div className="form-group">
         <label htmlFor="shopPassword">Shop Password:</label>
-        <input type="password" className="form-control" name="shopPassword" />
+        <input type="password" className="form-control" name="shopPassword" value={shopPassword} onChange={handleInput} />
       </div>
 
       {/* monitorDelay */}
       <div className="form-group">
         <label htmlFor="monitorDelay">Monitoring Delay (MS):</label>
-        <input type="number" className="form-control" name="monitorDelay" />
+        <input type="number" className="form-control" name="monitorDelay" value={monitorDelay} onChange={handleInput} />
       </div>
 
       {/* retryDelay */}
       <div className="form-group">
         <label htmlFor="retryDelay">Retry Delay (MS):</label>
-        <input type="number" className="form-control" name="retryDelay" />
+        <input type="number" className="form-control" name="retryDelay" value={retryDelay} onChange={handleInput} />
       </div>
 
       <button type="submit" className="btn btn-outline-light float-right">Submit Task</button>
