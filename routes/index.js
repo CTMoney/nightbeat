@@ -55,7 +55,7 @@ module.exports = (router) => {
 
   // proxy submission
   router.post('/proxy/submit', (req, res, next) => {
-    db.Proxy.create({ Address: req.body.proxy })
+    db.Proxy.create({ address: req.body.proxy })
       .then(dbProxy => res.json(dbProxy))
       .catch(err => console.log(err))
   })

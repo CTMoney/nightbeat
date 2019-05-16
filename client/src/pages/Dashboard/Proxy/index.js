@@ -3,47 +3,38 @@ import API from '../../../util/API'
 import ProxyTable from '../../../components/ProxyTable'
 
 
-class Proxies extends React.Component {
+const Proxies = props => {
 
-    state = {
-        proxy: [],
-    }
+	let [proxy, setProxy] = React.useState({
+		proxies: []
+	})
+	let { proxies } = proxy
 
-    handleInput = event => {
-        event.preventDefault()
-        const { name, value } = event.target
-        this.setState({
-          [name]: value
-        })
-      }
+	const handleInput = event => {
+		setProxy({
+			...proxy, [event.target.name]: event.target.value.split(',')
+		})
+	}
 
+	const handleProxy = (event) => {
+		event.preventDefault()
+		proxies.forEach((proxy) => {
+			API.proxy(proxy.trim())
+		})
+	}
 
-      handleProxy = (event) => {
-        event.preventDefault()
-        const { proxy } = this.state
-        console.time("proxy creation")
-        proxy.forEach((url) => {
-            API.proxy(url) 
-        })
-        console.timeEnd("proxy creation")
-      }
-
-    render() {
-        return (
-        <>
-            <p className="display-4 mt-0">Proxy</p>
-
-            <div>
-                <form className="form-inline" onSubmit={this.handleProxy}>
-
-                    <input className="form-control mb-2 mr-sm-2" placeholder="Input Proxy" style={{ minWidth: "200px" }} type="text" name="proxy"/>
-                    <button type="submit" className="btn btn-primary mb-2 mr-sm-2">submit</button>
-                </form> 
-            
-                <ProxyTable/>
-            </div>
-        </>
-    )}
+	return (
+		<>
+			<p className="display-4 mt-0">Proxy</p>
+			<div>
+				<form className="form-inline" onSubmit={handleProxy}>
+					<input className="form-control mb-2 mr-sm-2" style={{ minWidth: "200px" }} type="text" name="proxies" onChange={handleInput} />
+					<button type="submit" className="btn btn-primary mb-2 mr-sm-2">submit</button>
+				</form>
+				<ProxyTable />
+			</div>
+		</>
+	)
 }
 
 export default Proxies
