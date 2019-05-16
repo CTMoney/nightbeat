@@ -1,87 +1,81 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Redirect } from 'react-router-dom'
 import API from '../../../util/API'
-import './Register.css'
+import { AuthenticationContext } from '../../../context/authenticationContext'
 
-class Register extends Component {
-  state = {
+const Register = (props) => {
+
+  let { authenticated, userInfo, login } = React.useContext(AuthenticationContext)
+  let [redirectTo, setRedirectTo] = React.useState()
+  let [registrationFormData, setregistrationFormData] = React.useState({
     email: '',
     username: '',
-    password: '',
-    redirectTo: null
-  }
+    password: ''
+  })
+  const { email, username, password } = registrationFormData
 
-  handleInput = event => {
-    event.preventDefault()
-    const { name, value } = event.target
-    this.setState({
-      [name]: value
+  const handleInput = event => {
+    setregistrationFormData({
+      ...registrationFormData, [event.target.name]: event.target.value
     })
   }
 
-  handleRedirect = (page) => {
-    this.setState({
-      redirectTo: page
-    })
-  }
-
-  handleRegistration = (event) => {
+  const handleRegistration = event => {
     event.preventDefault()
-    const { email, username, password } = this.state
-    API.register(email, username, password, this.handleRedirect)
+    API.register(email, username, password)
+      .then(res => {
+        setRedirectTo('/login')
+        console.log(res)
+      })
+      .catch(err => console.log(err))
   }
 
-  render() {
-    if (this.state.redirectTo) {
-      return <Redirect to={{ pathname: this.state.redirectTo }} />
-    } else {
-      return (
-        <div className='container-reg' id="container-r">
-          <form onSubmit={this.handleRegistration}>
-            <div className='form-group'>
-              <label className='text-white' htmlFor='email'>Email address</label>
-              <input
-                type='email'
-                className='form-control'
-                name='email'
-                value={this.state.email}
-                onChange={this.handleInput}
-                placeholder='Enter email'
-              />
-            </div>
-            <div className='form-group'>
-              <label className='text-white' htmlFor='username'>
-                Username
-            </label>
-              <input
-                type='text'
-                className='form-control'
-                name='username'
-                value={this.state.username}
-                onChange={this.handleInput}
-                placeholder='Enter username'
-              />
-            </div>
-            <div className='form-group'>
-              <label className='text-white' htmlFor='password'>Password</label>
-              <input
-                type='password'
-                className='form-control'
-                name='password'
-                value={this.password}
-                onChange={this.handleInput}
-                placeholder='Enter password'
-              />
-            </div>
-
-            <button type='submit' className='btn btn-primary'>
-              Submit
-            </button>
-          </form>
+  return (
+    redirectTo ?
+      <Redirect to={{ pathname: redirectTo }} />
+      :
+      <form onSubmit={handleRegistration}>
+        <div className='form-group'>
+          <label className='text-white' htmlFor='email'>Email address</label>
+          <input
+            type='email'
+            className='form-control'
+            name='email'
+            value={email}
+            onChange={handleInput}
+            placeholder='Enter email'
+          />
         </div>
-      )
-    }
-  }
+        <div className='form-group'>
+          <label className='text-white' htmlFor='username'>
+            Username
+        </label>
+          <input
+            type='text'
+            className='form-control'
+            name='username'
+            value={username}
+            onChange={handleInput}
+            placeholder='Enter username'
+          />
+        </div>
+        <div className='form-group'>
+          <label className='text-white' htmlFor='password'>Password</label>
+          <input
+            type='password'
+            className='form-control'
+            name='password'
+            value={password}
+            onChange={handleInput}
+            placeholder='Enter password'
+          />
+        </div>
+
+        <button type='submit' className='btn btn-primary'>
+          Submit
+      </button>
+      </form>
+  )
 }
 
 export default Register

@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Link } from 'react-router-dom';
 import './splash.css';
-
 const Splash = () => {
     return (
         <>
@@ -9,7 +8,7 @@ const Splash = () => {
                 <Link className="navbar-brand" to="/">
                     Night Beat
                 </Link>
-                <a href="https://twitter.com/nightbeat_io" class="fa fa-twitter" id="twitTop" />
+                <a href="https://twitter.com/nightbeat_io" className="fa fa-twitter" id="twitTop" />
             </nav>
 
             <header>
@@ -28,8 +27,7 @@ const Splash = () => {
 
             <div align="center">
                 <div>
-                    <button id="purchase-btn">Click to Purchase</button>
-                    <button type="button" className="btn btn-success">+New Fake</button>
+                    <a href="/register"><button>Click to Purchase</button></a>
                 </div>
 
                 <div align="center">
@@ -53,13 +51,13 @@ const Splash = () => {
                             </ol>
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <img  src="https://picsum.photos/200" alt="First slide" />
+                                    <img src="https://picsum.photos/200" alt="First slide" />
                                 </div>
                                 <div className="carousel-item">
-                                    <img  src="https://picsum.photos/200" alt="Second slide" />
+                                    <img src="https://picsum.photos/200" alt="Second slide" />
                                 </div>
                                 <div className="carousel-item">
-                                    <img  src="https://picsum.photos/200" alt="Third slide" />
+                                    <img src="https://picsum.photos/200" alt="Third slide" />
                                 </div>
                             </div>
                             <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -138,7 +136,7 @@ const Splash = () => {
                         <div className='col-md-12'>
                             <div className='black-column'>
                                 footer</div>
-                            <a href="https://twitter.com/nightbeat_io" class="fa fa-twitter" />
+                            <a href="https://twitter.com/nightbeat_io" className="fa fa-twitter" />
                         </div>
                     </div>
                 </div>

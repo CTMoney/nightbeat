@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
                     msg: 'no name provided'
                 },
                 contains: {
-                    args: '\s',
+                    args: /\s/g,
                     msg: 'full name required'
                 }
             }
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             validate: {
                 notEmpty: {
-                    args: true, 
+                    args: true,
                     msg: 'no city provided'
                 }
             }
@@ -55,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             validate: {
                 notEmpty: {
-                    args: true, 
+                    args: true,
                     msg: 'no zip provided'
                 }
             }
@@ -64,7 +64,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             validate: {
                 notEmpty: {
-                    args: true, 
+                    args: true,
                     msg: 'no credit card number provided'
                 },
                 isCreditCard: {
@@ -73,37 +73,50 @@ module.exports = (sequelize, DataTypes) => {
                 }
             }
         },
+        card_name: {
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: {
+                    args: true,
+                    msg: 'no card name provided'
+                },
+                contains: {
+                    args: /\s/g,
+                    msg: 'please provide the full name'
+                }
+            }
+        },
         cvv: {
             type: DataTypes.INTEGER,
             validate: {
                 len: {
-                    args: [3,4],
+                    args: [3, 4],
                     msg: 'not a valid cvv'
-            }
-        },
-        expiry_month: {
-            type: DataTypes.INTEGER,
-            validate: {
-                len: {
-                    args: [2,2],
-                    msg: 'not a valid expiry month'
                 }
-            }
-        },
-        expiry_year: {
-            type: DataTypes.INTEGER,
-            validate: {
-                len: {
-                    args: [4, 4],
-                    msg: 'not a valid expiry year'
+            },
+            expiry_month: {
+                type: DataTypes.INTEGER,
+                validate: {
+                    len: {
+                        args: [2, 2],
+                        msg: 'not a valid expiry month'
+                    }
                 }
+            },
+            expiry_year: {
+                type: DataTypes.INTEGER,
+                validate: {
+                    len: {
+                        args: [2, 4],
+                        msg: 'not a valid expiry year'
+                    }
+                }
+            },
+            profile_name: {
+                type: DataTypes.STRING,
             }
-        },
-        profile_name: {
-            type: DataTypes.STRING,
         }
-    }
-        
-})
-return Billing
+
+    })
+    return Billing
 }
