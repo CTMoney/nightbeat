@@ -3,15 +3,15 @@ import { Redirect } from 'react-router-dom'
 import API from '../../../util/API'
 import { AuthenticationContext } from '../../../context/authenticationContext'
 
-const Login = (props) => {
+const Login = props => {
 
   let { authenticated, userInfo, login } = React.useContext(AuthenticationContext)
   let [redirectTo, setRedirectTo] = React.useState()
   let [loginForm, setLoginForm] = React.useState({
-   username: '',
-   password: ''
- })
-const {username, password} = loginForm
+    username: '',
+    password: ''
+  })
+  const { username, password } = loginForm
 
   const handleInput = event => {
     setLoginForm({
@@ -22,15 +22,13 @@ const {username, password} = loginForm
 
   const handleLogin = (event) => {
     event.preventDefault()
-    console.log('handling the login');
-
     API.login(username, password)
       .then(userInfo => {
-        console.log(userInfo);
-        login(userInfo)
         setRedirectTo('/')
+        login(userInfo.data.username)
         sessionStorage.setItem('authenticatedUser', true)
-        sessionStorage.setItem('userInfo', userInfo)
+        sessionStorage.setItem('userInfo', userInfo.data.username)
+
       })
       .catch(err => console.log(err))
   }
@@ -39,7 +37,7 @@ const {username, password} = loginForm
 
   return (
     redirectTo ?
-      <Redirect to={{ pathname: redirectTo }} />
+      <Redirect to={{ exactpathname: redirectTo }} />
       :
       <form onSubmit={handleLogin}>
         <div className='form-group'>

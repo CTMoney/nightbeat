@@ -22,7 +22,7 @@ export const AuthenticationProvider = (props) => {
       userInfo,
       login: (userInfo) => login(userInfo)
     }}
-      >
+    >
       {props.children}
     </AuthenticationContext.Provider>
   )

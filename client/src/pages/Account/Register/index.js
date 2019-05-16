@@ -11,8 +11,8 @@ const Register = (props) => {
     email: '',
     username: '',
     password: ''
- })
-  const {email, username, password} = registrationFormData
+  })
+  const { email, username, password } = registrationFormData
 
   const handleInput = event => {
     setregistrationFormData({
@@ -21,22 +21,20 @@ const Register = (props) => {
   }
 
   const handleRegistration = event => {
-    let [redirectTo, setRedirectTo] = React.useState()
     event.preventDefault()
     API.register(email, username, password)
       .then(res => {
-        setRedirectTo('/login') 
+        setRedirectTo('/login')
         console.log(res)
       })
       .catch(err => console.log(err))
   }
 
-  const registrationForm = () => {
-    if (redirectTo) {
-      return <Redirect to={{ pathname: redirectTo }} />
-    } else {
-      return (
-        <form onSubmit={handleRegistration}>
+  return (
+    redirectTo ?
+      <Redirect to={{ pathname: redirectTo }} />
+      :
+      <form onSubmit={handleRegistration}>
         <div className='form-group'>
           <label className='text-white' htmlFor='email'>Email address</label>
           <input
@@ -77,10 +75,7 @@ const Register = (props) => {
           Submit
       </button>
       </form>
-      )
-    }
-  }
-  return registrationForm()
+  )
 }
 
 export default Register

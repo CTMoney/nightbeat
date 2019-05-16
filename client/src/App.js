@@ -12,7 +12,7 @@ import { AuthenticationContext } from './context/authenticationContext';
 class App extends React.Component {
 
   AuthCheck = () => {
-    let {authenticated, userInfo} = this.context
+    let { authenticated, userInfo } = this.context
     if (authenticated && userInfo) {
       return (
         <Dashboard />
