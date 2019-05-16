@@ -13,7 +13,7 @@ const Splash = () => {
             </nav>
 
             <header>
-                <h1>This is The Header</h1>
+                <h1>Product Preveiw</h1>
             </header>
 
             <div align="center">
@@ -28,7 +28,7 @@ const Splash = () => {
 
             <div align="center">
                 <div>
-                    <button>Click to Purchase</button>
+                    <button id="purchase-btn">Click to Purchase</button>
                     <button type="button" className="btn btn-success">+New Fake</button>
                 </div>
 

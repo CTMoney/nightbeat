@@ -31,7 +31,7 @@ class Settings extends React.Component {
                     <div class='row'>
                         <img className="col-3" id='prof-img' src="https://picsum.photos/200" />
                         <div className="col-2 float-right mt-5">
-                            <button><i class="fas fa-cog"></i></button>
+                            <button><i class="fas fa-cog" id="settings-btn"></i></button>
                         </div>
                         <div className="col-4 float-right" style={{ marginRight: '200px' }}>
                             <p className="display-4" style={{ fontSize: '30px' }}>Username</p>

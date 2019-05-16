@@ -81,25 +81,25 @@ class Profiles extends React.Component {
                   <input type="text" name="expmonth" placeholder="September" />
 
                   <div className="row">
-                    <div className="col-50">
+                    <div className="col-100" id="bottom-left">
                       <label for="expyear">Exp Year</label>
                       <input type="text" name="expyear" placeholder="2018" />
                       <label className="switch">
                         <input type="checkbox" />
                         <span className="slider round"></span>
                       </label>
+                      <input id="prof-name" type="text" placeholder="Profile Name" />
                     </div>
-                    <div className="col-50">
+                    <div className="col-50" id="bottom-right">
                       <label for="cvv">CVV</label>
                       <input type="text" name="cvv" placeholder="352" />
                       <button type="button" className="btn btn-success">+New Fake</button>
                     </div>
                   </div>
-                  <input type="text" placeholder="Profile Name" />
                 </div>
               </div>
             </form>
-            <button type="button" class="btn btn-success">Save Profile!</button>
+            <button type="button" class="btn btn-success" id="btn-save">Save Profile!</button>
           </div>
         </div>
       </div>

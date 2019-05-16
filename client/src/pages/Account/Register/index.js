@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import API from '../../../util/API'
+import './Register.css'
 
 class Register extends Component {
   state = {
@@ -35,47 +36,49 @@ class Register extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
       return (
-        <form onSubmit={this.handleRegistration}>
-          <div className='form-group'>
-            <label className='text-white' htmlFor='email'>Email address</label>
-            <input
-              type='email'
-              className='form-control'
-              name='email'
-              value={this.state.email}
-              onChange={this.handleInput}
-              placeholder='Enter email'
-            />
-          </div>
-          <div className='form-group'>
-            <label className='text-white' htmlFor='username'>
-              Username
-          </label>
-            <input
-              type='text'
-              className='form-control'
-              name='username'
-              value={this.state.username}
-              onChange={this.handleInput}
-              placeholder='Enter username'
-            />
-          </div>
-          <div className='form-group'>
-            <label className='text-white' htmlFor='password'>Password</label>
-            <input
-              type='password'
-              className='form-control'
-              name='password'
-              value={this.password}
-              onChange={this.handleInput}
-              placeholder='Enter password'
-            />
-          </div>
+        <div className='container-reg' id="container-r">
+          <form onSubmit={this.handleRegistration}>
+            <div className='form-group'>
+              <label className='text-white' htmlFor='email'>Email address</label>
+              <input
+                type='email'
+                className='form-control'
+                name='email'
+                value={this.state.email}
+                onChange={this.handleInput}
+                placeholder='Enter email'
+              />
+            </div>
+            <div className='form-group'>
+              <label className='text-white' htmlFor='username'>
+                Username
+            </label>
+              <input
+                type='text'
+                className='form-control'
+                name='username'
+                value={this.state.username}
+                onChange={this.handleInput}
+                placeholder='Enter username'
+              />
+            </div>
+            <div className='form-group'>
+              <label className='text-white' htmlFor='password'>Password</label>
+              <input
+                type='password'
+                className='form-control'
+                name='password'
+                value={this.password}
+                onChange={this.handleInput}
+                placeholder='Enter password'
+              />
+            </div>
 
-          <button type='submit' className='btn btn-primary'>
-            Submit
-        </button>
-        </form>
+            <button type='submit' className='btn btn-primary'>
+              Submit
+            </button>
+          </form>
+        </div>
       )
     }
   }

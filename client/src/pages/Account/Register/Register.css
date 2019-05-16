@@ -1,0 +1,11 @@
+
+button {
+    background-color: rgb(42, 42, 66) !important;
+    width: 40% !important;
+margin-left: 30% !important;
+margin-right: 30% !important;
+}
+
+.jumbotron.text-white.bg-dark.shadow.container-reg {
+    height: 200px !important;
+}
