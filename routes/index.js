@@ -5,7 +5,8 @@ const db = require('../models'),
 
 module.exports = (router) => {
 
-  router.post("/register/submit", (req, res) => {
+  // registration
+  router.post("/register/submit", (req, res, next) => {
     const { username, email, password } = req.body;
     req.session.username = username
     db.User.create({ username, user_email: email, password })
@@ -19,6 +20,7 @@ module.exports = (router) => {
       .catch(err => console.log(err))
   })
 
+  // login 
   router.post('/user/login', (req, res, next) => {
     next()
   },
@@ -32,12 +34,33 @@ module.exports = (router) => {
     }
   )
 
+  // task submission
+  router.post('/task/submit', (req, res, next) => {
+    let {
+      shop, url, size, keywords, amount,
+      billingProfile, numberOfProxies, proxyInput,
+      shopPassword, monitorDelay, retryDelay, profileName
+    } = req.body
+
+    db.Task.create({
+      shop, url, size, keywords, amount,
+      billingProfile, numberOfProxies, proxyInput,
+      shopPassword, monitorDelay, retryDelay, profileName
+    })
+      .then(dbTask => {
+        res.json(dbTask)
+      })
+      .catch(err => console.log(err))
+  })
+
+  // proxy submission
   router.post('/proxy/submit', (req, res, next) => {
     db.Proxy.create({ Address: req.body.proxy })
       .then(dbProxy => res.json(dbProxy))
       .catch(err => console.log(err))
   })
 
+  // billing profile submission
   router.post('/billing/submit', (req, res, next) => {
     let { fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName } = req.body
     db.Billing.create({ fullName: fullName, email: email, address: address, city: city, state: state, zip: zip, cardname, ccn: cardnumber, expiry_month: expmonth, expiry_year: expyear, cvv: cvv, profile_name: profileName })
@@ -45,6 +68,7 @@ module.exports = (router) => {
       .catch(err => console.log(err))
   })
 
+  // settings update
   router.put('/settings/update', (req, res, next) => {
     let { monitor_delay, retry_delay } = req.body
     db.Settings.update({ global_monitor_delay: monitor_delay, global_retry_delay: retry_delay })
@@ -52,6 +76,7 @@ module.exports = (router) => {
       .catch(err => console.log(err))
   })
 
+  // generate webhook
   router.put('/settings/update', (req, res, next) => {
     let webhook = req.body
     db.Settings.update({ webhook })
@@ -59,6 +84,7 @@ module.exports = (router) => {
       .catch(err => console.log(err))
   })
 
+  // home page authentication unf
   router.get('/', passport.authenticate('local'), (req, res, next) => {
     console.log('===== user!!======')
     console.log(req.user)

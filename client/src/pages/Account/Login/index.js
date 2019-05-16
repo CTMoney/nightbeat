@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import API from '../../../util/API'
 import { AuthenticationContext } from '../../../context/authenticationContext'
 
-const Login = (props) => {
+const Login = props => {
 
   let { authenticated, userInfo, login } = React.useContext(AuthenticationContext)
   let [redirectTo, setRedirectTo] = React.useState()
@@ -22,14 +22,13 @@ const Login = (props) => {
 
   const handleLogin = (event) => {
     event.preventDefault()
-    console.log('handling the login');
-
     API.login(username, password)
       .then(userInfo => {
         setRedirectTo('/')
-        login(userInfo)
+        login(userInfo.data.username)
         sessionStorage.setItem('authenticatedUser', true)
-        sessionStorage.setItem('userInfo', userInfo)
+        sessionStorage.setItem('userInfo', userInfo.data.username)
+
       })
       .catch(err => console.log(err))
   }
