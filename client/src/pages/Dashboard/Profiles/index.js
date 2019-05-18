@@ -28,7 +28,7 @@ const Profiles = (props) => {
 
   const handleProfile = (event) => {
     event.preventDefault()
-    API.profile(fullName, email, address, city, state, zip, cardname, cardnumber, expmonth, expyear, cvv, profileName)
+    API.profile(fullName, email, address, city, state, zip, cardName, cardNumber, expMonth, expYear, cvv, profileName)
       .then(res => {
         console.log(res)
       })

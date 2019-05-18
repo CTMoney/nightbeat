@@ -35,6 +35,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         max: 128
       }
+    },
+    avatar: {
+      type: DataTypes.STRING,
+      defaultValue: 'https://cdn-images-1.medium.com/max/2600/1*KBwrbjppSZILvsiNVyoQKw.jpeg'
     }
   })
 

@@ -11,6 +11,14 @@ module.exports = (sequelize, DataTypes) => {
         webhook: {
             type: DataTypes.STRING
         }
-    })
+    }, {
+            classMethods: {
+                associate(models) {
+                    Settings.belongsTo(models.User, { where: { username: username } })
+                }
+            }
+
+        })
+
     return Settings
 }
