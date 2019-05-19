@@ -1,18 +1,21 @@
 @media (max-width: 767px) {
   body {
     position: relative;
-    background-image: url("./images/synth_waifu2x.png");
+    background-image: url("https://media.giphy.com/media/LwzI8l6ncLwRNgzPx4/giphy.gif");
     background-repeat: no-repeat;
     background-size: cover;
+    height: 1000px;
+    
   }
 }
 
 @media (min-width: 768px) {
   body {
     position: relative;
-    background-image: url("./images/synth_waifu2x.png");
+    background-image: url("https://media.giphy.com/media/LwzI8l6ncLwRNgzPx4/giphy.gif");
     background-repeat: no-repeat;
     background-size: cover;
+    height: 1000px;
   }
 }
 
@@ -114,4 +117,6 @@ span.price {
 #navStyle {
   color: white;
 }
+
+/*--------------billing----------*/
 

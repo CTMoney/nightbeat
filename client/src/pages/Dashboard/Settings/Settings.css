@@ -1,0 +1,120 @@
+body {
+  background-image: url("https://media.giphy.com/media/LwzI8l6ncLwRNgzPx4/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: 75% 50%;
+}
+
+.display-4.mt-5.text-white {
+  position: relative;
+  top: -30px;
+}
+
+.jumbotron.text-white.bg-dark.shadow {
+  position: relative;
+  top: -30px;
+  height: 720px;
+  background: radial-gradient(rgba(0, 139, 105, 0.9) , rgba(119, 47, 201, 0.9)) !important;
+  box-shadow: inset 2px 2px 4px 5px rgba(0,0,0,0.3);
+}
+
+/*-------------------*/
+
+#prof-container {
+  position: relative;
+  top: -30px;
+  background-color: rgb(42, 42, 66, 0.9);
+  box-shadow: inset 2px 2px 4px 5px rgba(0,0,0,0.3);
+}
+
+#prof-container button {
+    position: absolute;
+  top: -40px;
+  right: 10px;
+    color: white;
+    background-color: rgb(46, 45, 46);
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+
+}
+
+/*-------------------*/
+
+#enable-authentication {
+  position: relative;
+  top: -20px;
+}
+
+#my-button { 
+  background-color: rgb(42, 42, 66);
+        color: white;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        height: 40px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        align-content: center;
+        top: 10px;
+}
+
+/*-------------------*/
+
+#global-delay h3 {
+  font-size: 32px;
+}
+
+#global-delay {
+  font-size: 12px;
+  position: relative;
+  top: -50px;
+  align-content: center;
+  width: 40%;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#global-delay form {
+  position: relative;
+  top: -25px;
+}
+
+.col-sm-2.col-form-label {
+  position: relative !important;
+  padding: 20px !important;
+  margin-right: 2px !important;
+}
+
+/*-------------------*/
+
+#generate-web.container.mt-4 input.form-control {
+  position: relative;
+  top: 5px;
+}
+
+#generate-web {
+  position: relative;
+  bottom: -28px;
+  width: 50%;
+  float: right;
+}
+
+#GWbutton {
+  background-color: rgb(42, 42, 66);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+@media (max-width: 320px) {
+    #prof-container button {
+        position: relative;
+        top: -300px;
+        left: 250px;
+    }
+  }

@@ -1,5 +1,6 @@
 import React from 'react'
 import API from '../../../util/API'
+import './Profiles.css';
 
 const Profiles = (props) => {
 
@@ -41,7 +42,7 @@ const Profiles = (props) => {
         <div className="container">
           <form onSubmit={handleProfile}>
             <div className="row">
-              <div className="col-50">
+              <div className="col-50" id="left">
                 <h3>Billing Address</h3>
                 <label for="fname"><i className="fa fa-user"></i> Full Name</label>
                 <input type="text" name="fullName" placeholder="John M. Doe" value={fullName} onChange={handleInput} />
@@ -64,7 +65,7 @@ const Profiles = (props) => {
                 </div>
               </div>
 
-              <div className="col-50">
+              <div className="col-50" id="right">
                 <h3>Payment</h3>
                 <label for="fname">Accepted Cards</label>
                 <div className="icon-container">
