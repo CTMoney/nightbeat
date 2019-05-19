@@ -49,6 +49,7 @@ module.exports = (sequelize, DataTypes) => {
                     msg: 'no city provided'
                 }
             }
+
         },
         zip: {
             type: DataTypes.INTEGER,

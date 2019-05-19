@@ -1,4 +1,109 @@
 
-label {
-    letter-spacing: 25px;
+.container {
+    position: relative;
+}
+
+#billing-boi {
+    height: 670px;
+}
+
+
+#left.col-50 {
+    position: relative;
+    height: 680px;
+    top: -50px;
+}
+
+#left.col-50 h3 {
+    padding: 10px;
+}
+
+#left.col-50 label {
+    line-height: 10px;
+    position: relative;
+    top: -20px;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+#left.col-50 input {
+    position: relative;
+    top: -40px;
+    height: 40px;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+
+i {
+    margin-right: 15px;
+}
+
+.icon-container {
+    position: relative;
+    top: -60px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/*----------right-side--------------*/
+
+#right.col-50 {
+    position: relative;
+    height: 680px;
+    top: -50px;
+}
+
+#right.col-50 h3 {
+    padding: 10px;
+}
+
+#right.col-50 label {
+    position: relative;
+    top: -100px;
+}
+
+#right.col-50 input {
+    position: relative;
+    height: 40px;
+    top: -100px;
+    
+}
+
+#right.col-50 .switch input {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    top: -10px;
+    left: 10px;
+}
+
+#bottom-left #prof-name {
+    position: relative;
+    margin: 0;
+    top: -110px;
+}
+
+#right #accepted-cards {
+    position: relative;
+    top: 5px;
+    left: 250px;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+#bottom-right button {
+    position: relative;
+    top: -70px;
+    border-radius: 50%;
+    width: 40%;
+    background-color: rgb(42, 42, 66) !important;
+}
+
+#billing-boi #btn-save {
+    position: relative;
+    top: -130px;
+    background-color: rgb(42, 42, 66) !important;
 }

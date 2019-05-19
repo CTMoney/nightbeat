@@ -12,7 +12,7 @@ const Splash = () => {
             </nav>
 
             <header>
-                <h1>This is The Header</h1>
+                <h1>Product Preveiw</h1>
             </header>
 
             <div align="center">

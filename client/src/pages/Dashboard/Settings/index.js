@@ -1,5 +1,6 @@
 import React from 'react'
 import API from '../../../util/API'
+import './Settings.css'
 
 const Settings = props => {
 
