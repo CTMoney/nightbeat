@@ -30,7 +30,13 @@ export default {
   },
 
   settings(monitor_delay, retry_delay) {
-    return axios.put('settings/update', { monitor_delay, retry_delay })
-  }
+    return axios.put('/settings/update', { monitor_delay, retry_delay })
+  },
 
+  getUserData(username) {
+    console.log('/getUserData was called')
+    console.log(username)
+    return axios.get('/settings/user', { username: username })
+  }
 }
+

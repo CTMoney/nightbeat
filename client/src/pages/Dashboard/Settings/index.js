@@ -1,9 +1,10 @@
 import React from 'react'
 import API from '../../../util/API'
 import './Settings.css'
+import { AuthenticationContext } from '../../../context/authenticationContext';
 
 const Settings = props => {
-
+	let { authenticated, userInfo, login } = React.useContext(AuthenticationContext)
 	let [settingsForm, setSettingsForm] = React.useState({
 		monitorDelay: '',
 		retryDelay: '',
@@ -11,10 +12,26 @@ const Settings = props => {
 	})
 	let { monitorDelay, retryDelay } = settingsForm
 
+	let [userData, setUserData] = React.useState({
+		username: '',
+		userEmail: '',
+		userAvatar: ''
+	})
+
 	const handleInput = event => {
 		setSettingsForm({
 			...settingsForm, [event.target.name]: event.target.value
 		})
+	}
+
+	const findUserData = (username) => {
+		console.log('API.getUserData was called')
+		console.log(username)
+		API.getUserData(username)
+		// .then(res => {
+		// 	console.log(res)
+		// })
+		// .catch(err => console.log(err.response))
 	}
 
 	const handleSettings = (event) => {
@@ -24,6 +41,7 @@ const Settings = props => {
 
 	return (
 		<>
+			{findUserData(userInfo)}
 			<div className="container border p-5" style={{ borderTopLeftRadius: "20px" }}>
 				<img className="col-3" src="https://picsum.photos/200" />
 				<div className="col-2 float-right mt-5">

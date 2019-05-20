@@ -38,8 +38,17 @@ module.exports = (sequelize, DataTypes) => {
     },
     avatar: {
       type: DataTypes.STRING,
+      allowNull: false,
       defaultValue: 'https://cdn-images-1.medium.com/max/2600/1*KBwrbjppSZILvsiNVyoQKw.jpeg'
-    }
+    },
+    // associate: function (models) {
+    //   this.hasOne(models.Settings, {
+
+    //   })
+    //   this.hasMany(models.Proxy)
+    //   this.hasMany(models.Billing)
+    //   this.hasMany(models.Task)
+    // }
   })
 
   User.prototype.checkPassword = function (inputPassword) {
@@ -48,7 +57,6 @@ module.exports = (sequelize, DataTypes) => {
   User.prototype.hashPassword = function (plainTextPassword) {
     return bcrypt.hashSync(plainTextPassword, 10)
   }
-
   User.afterValidate(user => {
     console.time('Validation & Hashing Completed: ')
     if (!user.password) {
@@ -58,6 +66,5 @@ module.exports = (sequelize, DataTypes) => {
     }
     console.timeEnd('Validation & Hashing Completed: ')
   })
-
   return User
 }
