@@ -70,10 +70,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     monitor_delay: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       defaultValue: 1500
     },
     retry_delay: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       defaultValue: 1500
     },
     profileName: {
@@ -87,9 +89,16 @@ module.exports = (sequelize, DataTypes) => {
     },
     running: {
       type: DataTypes.BOOLEAN,
+      allowNull: false,
       defaultValue: false
-    }
+    },
+    // associate: function (models) {
+    //   Task.belongsTo(models.User, {
+    //     foreignKey: {
+    //       allowNull: false
+    //     }
+    //   })
+    // }
   })
-
   return Task
 }

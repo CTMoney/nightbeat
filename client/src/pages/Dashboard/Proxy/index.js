@@ -1,7 +1,7 @@
 import React from 'react'
 import API from '../../../util/API'
 import ProxyTable from './Table'
-import ProxyModal from './components/ProxyModal'
+import ProxyModal from './Modal'
 
 
 const Proxies = props => {
@@ -30,10 +30,10 @@ const Proxies = props => {
 			<div>
 				<form className="form-inline" onSubmit={handleProxy}>
 					<input className="form-control mb-2 mr-sm-2" style={{ minWidth: "200px" }} type="text" name="proxies" onChange={handleInput} />
-					
+
 				</form>
 				<ProxyTable />
-				<ProxyModal/>
+				<ProxyModal />
 			</div>
 		</>
 	)

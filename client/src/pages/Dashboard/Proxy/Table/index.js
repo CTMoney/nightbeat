@@ -1,8 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 
-
-
 export default class ProxyTable extends React.Component {
   render() {
     return (
