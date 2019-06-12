@@ -13,13 +13,15 @@ module.exports = (sequelize, DataTypes) => {
     webhook: {
       type: DataTypes.STRING
     },
-    // associate: function (models) {
-    //   Settings.belongsTo(models.User, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   })
-    // }
   })
+
+  Settings.associate = db => {
+    Settings.belongsTo(db.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
+  }
+
   return Settings
 }

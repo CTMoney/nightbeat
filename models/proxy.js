@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Proxy = sequelize.define("Proxy", {
+  const Proxyz = sequelize.define("Proxyz", {
     address: {
       type: DataTypes.STRING,
       unique: true,
@@ -10,13 +10,15 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    // associate: function (models) {
-    //   Proxy.belongsTo(models.User, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   })
-    // }
   })
-  return Proxy
+
+  Proxyz.associate = db => {
+    Proxyz.belongsTo(db.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
+  }
+
+  return Proxyz
 }

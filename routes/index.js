@@ -52,7 +52,7 @@ module.exports = (router) => {
 
     // proxy submission
     router.post('/proxy/submit', (req, res, next) => {
-      db.Proxy.create({ address: req.body.proxy })
+      db.Proxyz.create({ address: req.body.proxy })
         .then(dbProxy => res.json(dbProxy))
         .catch(err => console.log(err))
     }),
@@ -92,16 +92,15 @@ module.exports = (router) => {
       }
     }),
 
-    router.get('/settings/user', passport.authenticate('local'), (req, res, next) => {
-      // db.User.findOne({ where: { username: req.body.username } })
-      //   .then(dbUser => {
-      //     res.send(dbUser)
-      //   })
-      //   .catch(err => {
-      //     console.log("router.get called")
-      //     console.log(err)
-      //   })
-      console.log('hit endpoint')
-      res.end()
+    router.get('/settings/:username', (req, res, next) => {
+      console.log(req.params)
+      db.User.findOne({ where: { username: req.params.username }, attributes: ['user_email', 'username', 'avatar'] })
+        .then(dbUser => {
+          res.json(dbUser)
+        })
+        .catch(err => {
+          console.log("router.get called")
+          console.log(err)
+        })
     })
 } 

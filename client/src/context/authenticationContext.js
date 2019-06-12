@@ -14,7 +14,6 @@ export const AuthenticationProvider = (props) => {
   const login = userInfo => {
     setAuth(true)
     setUserInfo(userInfo)
-    console.log(userInfo)
   }
 
   return (

@@ -1,3 +1,5 @@
+const User = require('./user')
+
 module.exports = (sequelize, DataTypes) => {
   const Billing = sequelize.define("Billing", {
     fullName: {
@@ -116,13 +118,15 @@ module.exports = (sequelize, DataTypes) => {
     profile_name: {
       type: DataTypes.STRING,
     },
-    // associate: function (models) {
-    //   this.belongsTo(models.User, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   })
-    // }
   })
+
+  Billing.associate = db => {
+    Billing.belongsTo(db.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
+  }
+
   return Billing
 }

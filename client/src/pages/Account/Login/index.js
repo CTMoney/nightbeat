@@ -18,8 +18,8 @@ const Login = props => {
     setLoginForm({
       ...loginForm, [event.target.name]: event.target.value
     })
-
   }
+
 
   const handleLogin = (event) => {
     event.preventDefault()

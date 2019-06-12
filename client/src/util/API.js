@@ -34,9 +34,7 @@ export default {
   },
 
   getUserData(username) {
-    console.log('/getUserData was called')
-    console.log(username)
-    return axios.get('/settings/user', { username: username })
+    return axios.get('/settings/' + username)
   }
 }
 
