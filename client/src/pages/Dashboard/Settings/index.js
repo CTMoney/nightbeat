@@ -17,22 +17,27 @@ const Settings = props => {
 		userEmail: '',
 		userAvatar: ''
 	})
-
+	let { username, userEmail, userAvatar } = userData
 	const handleInput = event => {
 		setSettingsForm({
 			...settingsForm, [event.target.name]: event.target.value
 		})
 	}
 
-	const findUserData = (username) => {
-		console.log('API.getUserData was called')
-		console.log(username)
-		API.getUserData(username)
-		// .then(res => {
-		// 	console.log(res)
-		// })
-		// .catch(err => console.log(err.response))
-	}
+	// passing an empty array as second argument triggers the callback 
+	// in useEffect only after the initial render thus replicating `componentDidMount` lifecycle behaviour
+	React.useEffect(() => {
+		API.getUserData(userInfo)
+			.then(res => {
+				let { username, user_email, avatar } = res.data
+				setUserData({
+					username: username,
+					userEmail: user_email,
+					userAvatar: avatar
+				})
+			})
+			.catch(err => console.log(err))
+	}, [])
 
 	const handleSettings = (event) => {
 		event.preventDefault()
@@ -41,17 +46,16 @@ const Settings = props => {
 
 	return (
 		<>
-			{findUserData(userInfo)}
 			<div className="container border p-5" style={{ borderTopLeftRadius: "20px" }}>
-				<img className="col-3" src="https://picsum.photos/200" />
+				<img className="col-3" src={userAvatar} />
 				<div className="col-2 float-right mt-5">
 					<button>Edit</button>
 				</div>
 				<div className="col-4 float-right" style={{ marginRight: '200px' }}>
 					<p className="display-4" style={{ fontSize: '40px' }}>Username</p>
-					<p className="lead">ShoeNerd42</p>
+					<p className="lead">{username}</p>
 					<p className="display-4" style={{ fontSize: '40px' }}>Email</p>
-					<p className="lead">ShoeNerd42@email.com</p>
+					<p className="lead">{userEmail}</p>
 				</div>
 			</div>
 			<div className="container mt-3">
@@ -78,6 +82,7 @@ const Settings = props => {
 				<input className="form-control" type="text" placeholder="" name="webhook" value="" readOnly></input>
 			</div>
 		</>
+
 	)
 }
 

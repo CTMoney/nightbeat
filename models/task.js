@@ -92,13 +92,15 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: false
     },
-    // associate: function (models) {
-    //   Task.belongsTo(models.User, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   })
-    // }
   })
+
+  Task.associate = db => {
+    Task.belongsTo(db.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
+  }
+
   return Task
 }
